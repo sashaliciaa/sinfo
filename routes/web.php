@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PerangkatDesaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('dashboard', DashboardController::class);
+Route::resource('perangkatDesa', PerangkatDesaController::class);

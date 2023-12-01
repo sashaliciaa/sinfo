@@ -21,10 +21,17 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
+            'username' => fake()->userName(),
+            'nama_awal' => fake()->firstName(),
+            'nama_akhir' => fake()->lastName(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
+            'alamat' => fake()->address(),
+            'telp' => fake()->phoneNumber(),
+            'jabatan' => fake()->word(),
+            'tgl_mulai_jabat' => fake()->date(),
+            'foto' => 'null', // You might need a different method based on your requirements
             'remember_token' => Str::random(10),
         ];
     }

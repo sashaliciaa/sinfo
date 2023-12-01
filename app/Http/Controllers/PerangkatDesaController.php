@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dashboard;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\perangkatDesa;
 
-class DashboardController extends Controller
+class PerangkatDesaController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        $user = User::where('jabatan', '!=', 'administrator')->get();
+
+        return view('admin.perangkatdesa.index', compact('user'));
     }
 
     /**
@@ -39,7 +37,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(dashboard $dashboard)
+    public function show(perangkatDesa $perangkatDesa)
     {
         //
     }
@@ -47,7 +45,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(dashboard $dashboard)
+    public function edit(perangkatDesa $perangkatDesa)
     {
         //
     }
@@ -55,7 +53,7 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, dashboard $dashboard)
+    public function update(Request $request, perangkatDesa $perangkatDesa)
     {
         //
     }
@@ -63,7 +61,7 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(dashboard $dashboard)
+    public function destroy(perangkatDesa $perangkatDesa)
     {
         //
     }
