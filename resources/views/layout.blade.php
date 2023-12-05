@@ -76,7 +76,8 @@
                             Perangkat Desa
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <a class="nav-link collapsed" href="#">
+                        <a class="nav-link  {{ request()->routeIs('agendakegiatan.index') ? 'active' : '' }}"
+                            href="{{ route('agendakegiatan.index') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Agenda Kegiatan Desa
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
