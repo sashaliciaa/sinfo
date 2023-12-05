@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 request()->routeIs();
 Route::resource('dashboard', App\Http\Controllers\DashboardController::class);
+Route::resource('perangkatdesa', App\Http\Controllers\PerangkatDesaController::class);
