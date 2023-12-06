@@ -79,17 +79,31 @@
                         <a class="nav-link  {{ request()->routeIs('agendakegiatan.index') ? 'active' : '' }}"
                             href="{{ route('agendakegiatan.index') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Agenda Kegiatan Desa
+                            Agenda Kegiatan
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <a class="nav-link collapsed" href="#">
+                        <a class="nav-link  {{ request()->routeIs('pertanian.index') ? 'active' : '' }}"
+                            href="{{ route('pertanian.index') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Pertanian & Perkebunan
+                            Pertanian
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <a class="nav-link collapsed" href="#">
+                        <a class="nav-link  {{ request()->routeIs('perkebunan.index') ? 'active' : '' }}"
+                            href="{{ route('perkebunan.index') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Peternakan & Perikanan
+                            Perkebunan
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <a class="nav-link  {{ request()->routeIs('peternakan.index') ? 'active' : '' }}"
+                            href="{{ route('peternakan.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Peternakan
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <a class="nav-link  {{ request()->routeIs('perikanan.index') ? 'active' : '' }}"
+                            href="{{ route('perikanan.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Perikanan
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="sb-sidenav-menu-heading">Addons</div>
