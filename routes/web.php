@@ -25,3 +25,4 @@ Route::resource('pertanian', App\Http\Controllers\PertanianController::class);
 Route::resource('perkebunan', App\Http\Controllers\PerkebunanController::class);
 Route::resource('peternakan', App\Http\Controllers\PeternakanController::class);
 Route::resource('perikanan', App\Http\Controllers\PerikananController::class);
+Route::resource('galeri', App\Http\Controllers\GaleriController::class);
