@@ -29,7 +29,7 @@ class User extends Authenticatable
         'password',
         'alamat',
         'telp',
-        'jabatan',
+        'jabatan_id',
         'tgl_mulai_jabat',
         'foto',
     ];
@@ -53,4 +53,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function Jabatans()
+    {
+        return $this->belongsTo(Jabatan::class, 'jabatan_id');
+    }
 }

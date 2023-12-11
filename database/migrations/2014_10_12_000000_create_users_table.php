@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
@@ -21,13 +22,13 @@ return new class extends Migration
             $table->string('password');
             $table->text('alamat');
             $table->text('telp');
-            $table->string('jabatan');
             $table->date('tgl_mulai_jabat');
             $table->text('foto');
             $table->rememberToken();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

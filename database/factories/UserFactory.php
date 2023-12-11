@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'alamat' => fake()->address(),
             'telp' => fake()->phoneNumber(),
-            'jabatan' => fake()->word(),
+            'jabatan_id' => rand(2, 5),
             'tgl_mulai_jabat' => fake()->date(),
             'foto' => 'null', // You might need a different method based on your requirements
             'remember_token' => Str::random(10),
