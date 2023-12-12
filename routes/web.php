@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AgendaKegiatanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\JabatanController;
-use App\Http\Controllers\PerangkatDesaController;
-use App\Http\Controllers\PerkebunanController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PerikananController;
 use App\Http\Controllers\PertanianController;
+use App\Http\Controllers\PerkebunanController;
 use App\Http\Controllers\PeternakanController;
+use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\AgendaKegiatanController;
 
 /*
 |--------------------------------------------------------------------------
