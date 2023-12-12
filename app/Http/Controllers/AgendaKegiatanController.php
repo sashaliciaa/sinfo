@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AgendaKegiatan;
 use Illuminate\Http\Request;
 
 class AgendaKegiatanController extends Controller
@@ -12,7 +11,7 @@ class AgendaKegiatanController extends Controller
      */
     public function index()
     {
-        return view('admin.agendakegiatan.index');
+        //
     }
 
     /**
@@ -34,7 +33,7 @@ class AgendaKegiatanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AgendaKegiatan $agendaKegiatan)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +41,7 @@ class AgendaKegiatanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AgendaKegiatan $agendaKegiatan)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +49,7 @@ class AgendaKegiatanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AgendaKegiatan $agendaKegiatan)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +57,7 @@ class AgendaKegiatanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AgendaKegiatan $agendaKegiatan)
+    public function destroy(string $id)
     {
         //
     }

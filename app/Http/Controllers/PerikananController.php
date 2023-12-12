@@ -13,6 +13,7 @@ class PerikananController extends Controller
     public function index()
     {
         //
+        return view('perikanan.index');
     }
 
     /**
@@ -21,6 +22,7 @@ class PerikananController extends Controller
     public function create()
     {
         //
+        return view('perikanan.create');
     }
 
     /**
