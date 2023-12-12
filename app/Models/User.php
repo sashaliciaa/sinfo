@@ -17,10 +17,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    // Define the table name
+    protected $table = "users";
+
+    // Define the fillable fields
     protected $fillable = [
-        'name',
         'email',
+        'username',
+        'nama_awal',
+        'nama_akhir',
         'password',
+        'alamat',
+        'telp',
+        'jabatan_id',
+        'tgl_mulai_jabat',
+        'foto',
     ];
 
     /**
@@ -42,4 +53,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function Jabatans()
+    {
+        return $this->belongsTo(Jabatan::class, 'jabatan_id');
+    }
 }

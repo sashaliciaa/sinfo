@@ -7,59 +7,79 @@ use Illuminate\Http\Request;
 
 class PerkebunanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('perkebunan.index');
+        $perkebunans = Perkebunan::latest()->get();
+        return view('admin.perkebunan.index', compact('perkebunans'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('perkebunan.create');
+        return view('admin.perkebunan.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        try {
+            $this->validate($request, [
+                'jenis_tanaman' => 'required',
+                'waktu_tanam' => 'required|date',
+                'waktu_panen' => 'required|date',
+                'luas_wilayah_tanam' => 'required',
+            ]);
+
+            Perkebunan::create([
+                'jenis_tanaman' => $request->jenis_tanaman,
+                'waktu_tanam' => $request->waktu_tanam,
+                'waktu_panen' => $request->waktu_panen,
+                'luas_wilayah_tanam' => $request->luas_wilayah_tanam,
+            ]);
+
+            return redirect()->route('perkebunan.index')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            return redirect()->route('perkebunan.index')->with('fail', 'Data gagal disimpan' . $e->getMessage());
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Perkebunan $perkebunan)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Perkebunan $perkebunan)
     {
-        //
+        return view('admin.perkebunan.edit', compact('perkebunan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Perkebunan $perkebunan)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $validatedData = $request->validate([
+                'jenis_tanaman' => 'required',
+                'waktu_tanam' => 'required|date',
+                'waktu_panen' => 'required|date',
+                'luas_wilayah_tanam' => 'required',
+            ]);
+
+            $perkebunan = Perkebunan::find($id);
+
+            if (!$perkebunan) {
+                return redirect()->route('perkebunan.index')->with('fail', 'Data Perkebunan Tidak Ditemukan');
+            }
+
+            $perkebunan->update([
+                'jenis_tanaman' => $validatedData['jenis_tanaman'],
+                'waktu_tanam' => $validatedData['waktu_tanam'],
+                'waktu_panen' => $validatedData['waktu_panen'],
+                'luas_wilayah_tanam' => $validatedData['luas_wilayah_tanam'],
+            ]);
+
+            return redirect()->route('perkebunan.index')->with('success', 'Data berhasil diperbarui.');
+        } catch (\Exception $e) {
+            return redirect()->route('perkebunan.index')->with('fail', 'Data gagal disimpan' . $e->getMessage());
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Perkebunan $perkebunan)
+    public function destroy(Perkebunan $perkebunan, $id)
     {
-        //
+        $perkebunan = Perkebunan::where("id", $id)->first();
+        $perkebunan->delete();
+
+        return redirect()->route('perkebunan.index')->with('success', 'Data berhasil dihapus.');
     }
 }
