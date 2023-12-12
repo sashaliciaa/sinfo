@@ -11,7 +11,6 @@ class Jabatan extends Model
 
     protected $guarded = ['id'];
 
-    // Model Reservasi
     public function Users()
     {
         return $this->hasMany(User::class);

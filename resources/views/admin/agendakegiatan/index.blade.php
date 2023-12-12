@@ -66,9 +66,18 @@
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
-                events: {
+                events: [{
+                        title: 'Event 1',
+                        start: '2023-12-01',
+                        end: '2023-12-02',
+                    },
+                    {
+                        title: 'Event 2',
+                        start: '2023-12-05',
+                    },
+                    // Add more events as needed
+                ]
 
-                }
             });
             calendar.render();
         });

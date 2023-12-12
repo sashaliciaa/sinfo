@@ -225,7 +225,7 @@
 
                             <div class="col-md-6">
                                 <label for="jabatan" class="form-label"><strong>Jabatan:</strong></label>
-                                {{-- <p>{{ $item->jabatans->jabatan }}</p> --}}
+                                <p>{{ $item->jabatans->jabatan }}</p>
 
                                 <label for="tgl_mulai_jabat" class="form-label"><strong>Tanggal Mulai
                                         Jabatan:</strong></label>

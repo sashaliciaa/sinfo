@@ -49,9 +49,9 @@
                             <td>{{ $item->jenis_ternak }}</td>
                             <td>{{ $item->hewan_ternak }}</td>
                             <td>{{ $item->pakan }}</td>
-                            <td>{{ $item->umur_ternak }}</td>
-                            <td>{{ $item->berat_ternak }}</td>
-                            <td>{{ $item->jumlah_ternak }}</td>
+                            <td>{{ $item->umur_ternak }} Tahun</td>
+                            <td>{{ $item->berat_ternak }} Kg</td>
+                            <td>{{ $item->jumlah_ternak }} Ekor</td>
                             <td>
                                 <div class="d-flex">
                                     <button type="button" class="btn btn-warning me-2" data-bs-toggle="modal"

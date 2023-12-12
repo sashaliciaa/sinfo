@@ -34,7 +34,7 @@ class GaleriController extends Controller
             $file->move($tujuan_upload, $nama_file);
 
             Galeri::create([
-                'nama_foto' => $nama_file,
+                'nama_foto' => $request->nama_foto,
                 'foto_galeri' => $nama_file,
             ]);
 
