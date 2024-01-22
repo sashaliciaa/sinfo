@@ -82,4 +82,20 @@ class PertanianController extends Controller
 
         return redirect()->route('pertanian.index')->with('success', 'Data berhasil dihapus.');
     }
+
+    public function printReport()
+    {
+        $pertanians = Pertanian::all();
+
+        // select jenis tanaman yang tidak double
+        $jenis_tanaman = Pertanian::select('jenis_tanaman')->distinct()->get();
+        $luas_tanam = Pertanian::select('luas_wilayah_tanam')->get();
+
+        $jenis_tanaman_count = $jenis_tanaman->count();
+        $luas_tanam_count = $luas_tanam->count();
+
+        $pdf = app('dompdf.wrapper')->loadView('admin.pertanian.report', compact('pertanians', 'jenis_tanaman_count', 'luas_tanam_count'));
+
+        return $pdf->stream('laporan_pertanian.pdf');
+    }
 }

@@ -19,10 +19,9 @@
                     <i class="fas fa-table me-1"></i>
                     Data Perangkat Desa
                 </span>
-                <a href="{{ route('perangkatdesa.create') }}" class="btn btn-primary">
-                    <i class="fas fa-plus me-1"></i>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdd">
                     Tambah Data
-                </a>
+                </button>
                 <!-- Button trigger modal -->
             </div>
         </div>
@@ -36,6 +35,7 @@
                         <th>Alamat</th>
                         <th>Telephone</th>
                         <th>Jabatan</th>
+                        <th>Status</th>
                         <th>Foto</th>
                         <th>Aksi</th>
                     </tr>
@@ -49,11 +49,12 @@
                             <td>{{ $userItem->alamat }}</td>
                             <td>{{ $userItem->telp }}</td>
                             <td>{{ $userItem->jabatans->jabatan }}</td>
+                            <td>{{ $userItem->status }}</td>
                             <td><img width="100px" src="{{ url('Foto_perangkat_desa/' . $userItem->foto) }}"></td>
                             <td>
                                 <div class="d-flex">
                                     <!-- Detail Button -->
-                                    <button type="button" class="btn btn-info me-2" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-dark me-2" data-bs-toggle="modal"
                                         data-bs-target="#modalDetail{{ $userItem->id }}">
                                         <i class="fas fa-info-circle"></i>
                                     </button>
@@ -83,15 +84,104 @@
         </div>
     </div>
 
+    <!-- Modal Add -->
+    <div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <form method="POST" action="{{ route('perangkatdesa.store') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row g-3 m-3">
+                        <div class="col-md-6">
+                            <label for="nama_awal" class="form-label">Nama Awal</label>
+                            <input type="text" class="form-control" id="nama_awal" name="nama_awal">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="nama_akhir" class="form-label">Nama Akhir</label>
+                            <input type="text" class="form-control" id="nama_akhir" name="nama_akhir">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="telp" class="form-label">Telepon</label>
+                            <input type="text" class="form-control" id="telp" name="telp">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <textarea class="form-control" id="alamat" name="alamat"></textarea>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="jabatan" class="form-label">Jabatan</label>
+                            <select name="jabatan" id="jabatan" class="form-select">
+                                <option selected disabled>Pilih Jabatan</option>
+                                @foreach ($dataJabatan as $Jabatanitem)
+                                    <option value="{{ $Jabatanitem->id }}">{{ $Jabatanitem->jabatan }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="tgl_mulai_jabat" class="form-label">Tanggal Mulai Jabatan</label>
+                            <input type="date" class="form-control" id="tgl_mulai_jabat" name="tgl_mulai_jabat">
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="status" class="form-label">Status</label>
+                            <select name="status" id="status" class="form-select">
+                                <option selected disabled>Pilih Status</option>
+                                <option value="Aktif">Aktif</option>
+                                <option value="Tidak Aktif">Tidak Aktif</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="foto" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+                        </div>
+
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary w-100">Simpan</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Add -->
+
+
     @foreach ($users as $EditItem)
         <!-- Modal Edit -->
         <div class="modal fade" id="modalEdit{{ $EditItem->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-warning text-white">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Edit User {{ $EditItem->username }}</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <form method="POST" action="{{ route('perangkatdesa.update', $EditItem->id) }}"
                         enctype="multipart/form-data">
@@ -99,35 +189,30 @@
                         @method('PUT')
                         <div class="modal-body">
                             <div class="row">
-                                <!-- Nama Awal Input -->
                                 <div class="form-group col-6">
                                     <label for="nama_awal" class="form-label">Nama Awal</label>
                                     <input type="text" class="form-control" id="nama_awal" name="nama_awal"
                                         value="{{ $EditItem->nama_awal }}" required>
                                 </div>
 
-                                <!-- Nama Akhir Input -->
                                 <div class="form-group col-6">
                                     <label for="nama_akhir" class="form-label">Nama Akhir</label>
                                     <input type="text" class="form-control" id="nama_akhir" name="nama_akhir"
                                         value="{{ $EditItem->nama_akhir }}" required>
                                 </div>
 
-                                <!-- Email Input -->
                                 <div class="form-group col-6">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" name="email"
                                         value="{{ $EditItem->email }}" required>
                                 </div>
 
-                                <!-- Username Input -->
                                 <div class="form-group col-6">
                                     <label for="username" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="username" name="username"
                                         value="{{ $EditItem->username }}" required>
                                 </div>
 
-                                <!-- Password Input -->
                                 <div class="form-group">
                                     <label for="password" class="form-label">Password</label>
                                     <input type="password" class="form-control" id="password" name="password"
@@ -135,20 +220,17 @@
                                     <small class="text-muted">Biarkan kosong jika tidak ingin merubah password.</small>
                                 </div>
 
-                                <!-- Telp Input -->
                                 <div class="form-group">
                                     <label for="telp" class="form-label">Telepon</label>
                                     <input type="text" class="form-control" id="telp" name="telp"
                                         value="{{ $EditItem->telp }}" required>
                                 </div>
 
-                                <!-- Alamat Input -->
                                 <div class="form-group">
                                     <label for="alamat" class="form-label">Alamat</label>
                                     <textarea class="form-control" id="alamat" name="alamat" required>{{ $EditItem->alamat }}</textarea>
                                 </div>
 
-                                <!-- Jabatan Input -->
                                 <div class="form-group col-6">
                                     <label for="jabatan" class="form-label">Jabatan</label>
                                     <select name="jabatan" id="jabatan" class="form-select">
@@ -160,17 +242,25 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    {{-- <input type="text" class="form-control" id="jabatan" name="jabatan" required> --}}
                                 </div>
 
-                                <!-- Tanggal Mulai Jabatan Input -->
                                 <div class="form-group col-6">
                                     <label for="tgl_mulai_jabat" class="form-label">Tanggal Mulai Jabatan</label>
                                     <input type="date" class="form-control" id="tgl_mulai_jabat"
                                         name="tgl_mulai_jabat" value="{{ $EditItem->tgl_mulai_jabat }}" required>
                                 </div>
 
-                                <!-- Foto Input -->
+                                <div class="col-md-12">
+                                    <label for="status" class="form-label">Status</label>
+                                    <select name="status" id="status" class="form-select">
+                                        <option selected value="{{ $EditItem->status }}">
+                                            {{ $EditItem->status }}
+                                        </option>
+                                        <option value="Aktif">Aktif</option>
+                                        <option value="Tidak Aktif">Tidak Aktif</option>
+                                    </select>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="foto" class="form-label">Foto</label>
                                     <input type="file" class="form-control" id="foto" name="foto"
@@ -180,8 +270,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                            <button type="submit" class="btn btn-warning text-white">Simpan Perubahan</button>
                         </div>
                     </form>
 
@@ -197,9 +286,10 @@
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-dark text-white">
                         <h5 class="modal-title" id="exampleModalLabel">Detail User: {{ $item->username }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -207,11 +297,9 @@
                                 <label for="nama_awal" class="form-label"><strong>Nama Awal:</strong></label>
                                 <p>{{ $item->nama_awal }}</p>
 
-                                <label for="nama_akhir" class="form-label"><strong>Nama Akhir:</strong></label>
-                                <p>{{ $item->nama_akhir }}</p>
+                                <label for="jabatan" class="form-label"><strong>Jabatan:</strong></label>
+                                <p>{{ $item->jabatans->jabatan }}</p>
 
-                                <label for="email" class="form-label"><strong>Email:</strong></label>
-                                <p>{{ $item->email }}</p>
 
                                 <label for="username" class="form-label"><strong>Username:</strong></label>
                                 <p>{{ $item->username }}</p>
@@ -224,8 +312,9 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="jabatan" class="form-label"><strong>Jabatan:</strong></label>
-                                <p>{{ $item->jabatans->jabatan }}</p>
+                                <label for="nama_akhir" class="form-label"><strong>Nama Akhir:</strong></label>
+                                <p>{{ $item->nama_akhir }}</p>
+
 
                                 <label for="tgl_mulai_jabat" class="form-label"><strong>Tanggal Mulai
                                         Jabatan:</strong></label>

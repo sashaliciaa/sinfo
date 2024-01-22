@@ -1,4 +1,4 @@
-<!-- resources/views/admin/peternakan/report.blade.php -->
+<!-- resources/views/admin/perikanan/report.blade.php -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,9 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan Data Peternakan</title>
+    <title>Laporan Data Perikanan</title>
     <style>
-        /* Atur gaya cetak sesuai kebutuhan Anda */
+        /* Adjust the printing style as needed */
         body {
             font-family: Arial, sans-serif;
         }
@@ -53,7 +53,7 @@
         <tbody>
             <tr>
                 <td>
-                    <h2 style="margin: 0px">Laporan Data Peternakan Desa Sindangmekar</h2>
+                    <h2 style="margin: 0px">Laporan Data Perikanan Desa Sindangmekar</h2>
                     <small>Dukupuntang, Cirebon, Jawa Barat, Indonesia . </small>
                 </td>
                 <td class="right" style="width: 50%">
@@ -71,11 +71,11 @@
             </tr>
             <tr>
                 <td>{{ Auth::user()->nama_awal }} {{ Auth::user()->nama_akhir }} - {{ date('d F Y') }}</td>
-                <td class="right">Jenis Ternak : {{ $jenis_ternak_count }}</td>
+                <td class="right">Jenis Ikan : {{ $jenis_ikan_count }}</td>
             </tr>
             <tr>
-                <td>Total Data : {{ $peternakans->count() }}</td>
-                <td class="right">Hewan Ternak : {{ $hewan_ternak_count }}</td>
+                <td>Total Data : {{ $perikanans->count() }}</td>
+                <!-- Add other relevant total data as needed -->
             </tr>
         </tbody>
     </table>
@@ -84,24 +84,20 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Jenis Ternak</th>
-                <th>Hewan Ternak</th>
+                <th>Jenis Ikan</th>
                 <th>Pakan</th>
-                <th>Umur Ternak</th>
-                <th>Berat Ternak</th>
-                <th>Jumlah Ternak</th>
+                <th>Jumlah Ikan</th>
+                <th>Berat Ikan</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($peternakans as $item)
+            @foreach ($perikanans as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->jenis_ternak }}</td>
-                    <td>{{ $item->hewan_ternak }}</td>
+                    <td>{{ $item->jenis_ikan }}</td>
                     <td>{{ $item->pakan }}</td>
-                    <td>{{ $item->umur_ternak }} Tahun</td>
-                    <td>{{ $item->berat_ternak }} Kg</td>
-                    <td>{{ $item->jumlah_ternak }} Ekor</td>
+                    <td>{{ $item->jumlah_ikan }} Ekor</td>
+                    <td>{{ $item->berat_ikan }} Kg</td>
                 </tr>
             @endforeach
         </tbody>

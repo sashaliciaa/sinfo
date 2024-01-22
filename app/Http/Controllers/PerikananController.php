@@ -2,66 +2,107 @@
 
 namespace App\Http\Controllers;
 
+use Barryvdh\DomPDF\PDF;
 use App\Models\Perikanan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PerikananController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
-        return view('perikanan.index');
+        $perikanans = Perikanan::latest()->get();
+        return view('admin.perikanan.index', compact('perikanans'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
-        return view('perikanan.create');
+        return view('admin.perikanan.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        try {
+            $this->validate($request, [
+                'jenis_ikan' => 'required',
+                'pakan' => 'required',
+                'jumlah_ikan' => 'required|integer',
+                'berat_ikan' => 'required|numeric',
+            ]);
+
+            Perikanan::create([
+                'jenis_ikan' => $request->jenis_ikan,
+                'pakan' => $request->pakan,
+                'jumlah_ikan' => $request->jumlah_ikan,
+                'berat_ikan' => $request->berat_ikan,
+            ]);
+
+            return redirect()->route('perikanan.index')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            return redirect()->route('perikanan.index')->with('fail', 'Data gagal disimpan' . $e->getMessage());
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Perikanan $perikanan)
+    public function edit($id)
     {
-        //
+        $perikanan = Perikanan::find($id);
+        return view('admin.perikanan.edit', compact('perikanan'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Perikanan $perikanan)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $this->validate($request, [
+                'jenis_ikan' => 'required',
+                'pakan' => 'required',
+                'jumlah_ikan' => 'required|integer',
+                'berat_ikan' => 'required|numeric',
+            ]);
+
+            $perikanan = Perikanan::find($id);
+
+            if (!$perikanan) {
+                return redirect()->route('perikanan.index')->with('fail', 'Data Perikanan Tidak Ditemukan');
+            }
+
+            $perikanan->update([
+                'jenis_ikan' => $request->jenis_ikan,
+                'pakan' => $request->pakan,
+                'jumlah_ikan' => $request->jumlah_ikan,
+                'berat_ikan' => $request->berat_ikan,
+            ]);
+
+            return redirect()->route('perikanan.index')->with('success', 'Data berhasil diperbarui.');
+        } catch (\Exception $e) {
+            return redirect()->route('perikanan.index')->with('fail', 'Data gagal disimpan' . $e->getMessage());
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Perikanan $perikanan)
+    public function destroy($id)
     {
-        //
+        $perikanan = Perikanan::find($id);
+
+        if (!$perikanan) {
+            return redirect()->route('perikanan.index')->with('fail', 'Data Perikanan Tidak Ditemukan');
+        }
+
+        $perikanan->delete();
+
+        return redirect()->route('perikanan.index')->with('success', 'Data berhasil dihapus.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Perikanan $perikanan)
+
+    public function printReport()
     {
-        //
+        $perikanans = Perikanan::all();
+
+        // select jenis ikan yang tidak double
+        $jenis_ikan = Perikanan::select('jenis_ikan')->distinct()->get();
+
+        $jenis_ikan_count = $jenis_ikan->count();
+
+        $pdf = app('dompdf.wrapper')->loadView('admin.perikanan.report', compact('perikanans', 'jenis_ikan_count'));
+
+        return $pdf->stream('laporan_perikanan.pdf');
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="mt-4 text-center">Data Perkebunan Desa Sindangmekar</h3>
+    <h3 class="mt-4 text-center">Data Meubel Desa Sindangmekar</h3>
     <ol class="breadcrumb mb-4">
     </ol>
     <div class="card mb-4">
@@ -9,13 +9,13 @@
             <div class="d-flex justify-content-between align-items-center">
                 <span>
                     <i class="fas fa-table me-1"></i>
-                    Data Perkebunan
+                    Data Meubel
                 </span>
                 <div class="ml-auto">
                     <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
                         Tambah Data
                     </button>
-                    <a href="{{ route('perkebunan.printReport') }}" class="btn btn-dark" target="_blank"><i
+                    <a href="{{ route('meubel.printReport') }}" class="btn btn-dark" target="_blank"><i
                             class="fas fa-print"></i> Print</a>
                 </div>
             </div>
@@ -30,28 +30,26 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Jenis Tanaman</th>
-                        <th>Waktu Tanam</th>
-                        <th>Waktu Panen</th>
-                        <th>Luas Wilayah Tanam</th>
+                        <th>Jumlah Meubelers</th>
+                        <th>Jenis Meubel</th>
+                        <!-- Add more columns as needed -->
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($perkebunans as $item)
+                    @foreach ($meubels as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->jenis_tanaman }}</td>
-                            <td>{{ $item->waktu_tanam }}</td>
-                            <td>{{ $item->waktu_panen }}</td>
-                            <td>{{ $item->luas_wilayah_tanam }} m<sup>2</sup></td>
+                            <td>{{ $item->jumlah_meubelers }}</td>
+                            <td>{{ $item->jenis_meubel }}</td>
+                            <!-- Add more columns as needed -->
                             <td>
                                 <div class="d-flex">
                                     <button type="button" class="btn btn-warning me-2" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $item->id }}">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <form action="{{ route('perkebunan.destroy', $item->id) }}" method="POST">
+                                    <form action="{{ route('meubel.destroy', $item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger"
@@ -68,41 +66,30 @@
         </div>
     </div>
 
+    <!-- Add Modal for Adding Data -->
     <div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Perkebunan</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Meubel</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form method="POST" action="{{ route('perkebunan.store') }}">
+                <form method="POST" action="{{ route('meubel.store') }}">
                     @csrf
                     @method('POST')
                     <div class="modal-body">
-                        <!-- Jenis Tanaman Input -->
+                        <!-- Jumlah Meubelers Input -->
                         <div class="form-group">
-                            <label for="jenis_tanaman" class="form-label">Jenis Tanaman</label>
-                            <input type="text" class="form-control" id="jenis_tanaman" name="jenis_tanaman"
-                                placeholder="Masukkan Jenis Tanaman" required>
+                            <label for="jumlah_meubelers" class="form-label">Jumlah Meubelers</label>
+                            <input type="number" class="form-control" id="jumlah_meubelers" name="jumlah_meubelers"
+                                placeholder="Masukkan Jumlah Meubelers" required>
                         </div>
 
-                        <!-- Waktu Tanam Input -->
+                        <!-- Jenis Meubel Input -->
                         <div class="form-group">
-                            <label for="waktu_tanam" class="form-label">Waktu Tanam</label>
-                            <input type="date" class="form-control" id="waktu_tanam" name="waktu_tanam" required>
-                        </div>
-
-                        <!-- Waktu Panen Input -->
-                        <div class="form-group">
-                            <label for="waktu_panen" class="form-label">Waktu Panen</label>
-                            <input type="date" class="form-control" id="waktu_panen" name="waktu_panen" required>
-                        </div>
-
-                        <!-- Luas Wilayah Tanam Input -->
-                        <div class="form-group">
-                            <label for="luas_wilayah_tanam" class="form-label">Luas Wilayah Tanam</label>
-                            <input type="text" class="form-control" id="luas_wilayah_tanam" name="luas_wilayah_tanam"
-                                placeholder="Masukkan Luas Wilayah Tanam" required>
+                            <label for="jenis_meubel" class="form-label">Jenis Meubel</label>
+                            <input type="text" class="form-control" id="jenis_meubel" name="jenis_meubel"
+                                placeholder="Masukkan Jenis Meubel" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -114,46 +101,33 @@
         </div>
     </div>
 
-    @foreach ($perkebunans as $item)
+
+    <!-- Add Modals for Editing Data -->
+    @foreach ($meubels as $item)
         <div class="modal fade" id="modalEdit{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Perkebunan {{ $item->jenis_tanaman }}
-                        </h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Meubel {{ $item->jenis_meubel }}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="POST" action="{{ route('perkebunan.update', $item->id) }}">
+                    <form method="POST" action="{{ route('meubel.update', $item->id) }}">
                         @csrf
                         @method('PUT')
                         <div class="modal-body">
-                            <!-- Jenis Tanaman Input -->
+                            <!-- Jumlah Meubelers Input -->
                             <div class="form-group">
-                                <label for="jenis_tanaman" class="form-label">Jenis Tanaman</label>
-                                <input type="text" class="form-control" id="jenis_tanaman" name="jenis_tanaman"
-                                    value="{{ $item->jenis_tanaman }}" required>
+                                <label for="jumlah_meubelers" class="form-label">Jumlah Meubelers</label>
+                                <input type="number" class="form-control" id="jumlah_meubelers" name="jumlah_meubelers"
+                                    value="{{ $item->jumlah_meubelers }}" required>
                             </div>
 
-                            <!-- Waktu Tanam Input -->
+                            <!-- Jenis Meubel Input -->
                             <div class="form-group">
-                                <label for="waktu_tanam" class="form-label">Waktu Tanam</label>
-                                <input type="date" class="form-control" id="waktu_tanam" name="waktu_tanam"
-                                    value="{{ $item->waktu_tanam }}" required>
-                            </div>
-
-                            <!-- Waktu Panen Input -->
-                            <div class="form-group">
-                                <label for="waktu_panen" class="form-label">Waktu Panen</label>
-                                <input type="date" class="form-control" id="waktu_panen" name="waktu_panen"
-                                    value="{{ $item->waktu_panen }}" required>
-                            </div>
-
-                            <!-- Luas Wilayah Tanam Input -->
-                            <div class="form-group">
-                                <label for="luas_wilayah_tanam" class="form-label">Luas Wilayah Tanam</label>
-                                <input type="text" class="form-control" id="luas_wilayah_tanam"
-                                    name="luas_wilayah_tanam" value="{{ $item->luas_wilayah_tanam }}" required>
+                                <label for="jenis_meubel" class="form-label">Jenis Meubel</label>
+                                <input type="text" class="form-control" id="jenis_meubel" name="jenis_meubel"
+                                    value="{{ $item->jenis_meubel }}" required>
                             </div>
                         </div>
                         <div class="modal-footer">

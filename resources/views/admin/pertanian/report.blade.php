@@ -1,4 +1,4 @@
-<!-- resources/views/admin/peternakan/report.blade.php -->
+<!-- resources/views/admin/pertanian/report.blade.php -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan Data Peternakan</title>
+    <title>Laporan Data Pertanian</title>
     <style>
         /* Atur gaya cetak sesuai kebutuhan Anda */
         body {
@@ -53,7 +53,7 @@
         <tbody>
             <tr>
                 <td>
-                    <h2 style="margin: 0px">Laporan Data Peternakan Desa Sindangmekar</h2>
+                    <h2 style="margin: 0px">Laporan Data Pertanian Desa Sindangmekar</h2>
                     <small>Dukupuntang, Cirebon, Jawa Barat, Indonesia . </small>
                 </td>
                 <td class="right" style="width: 50%">
@@ -71,11 +71,11 @@
             </tr>
             <tr>
                 <td>{{ Auth::user()->nama_awal }} {{ Auth::user()->nama_akhir }} - {{ date('d F Y') }}</td>
-                <td class="right">Jenis Ternak : {{ $jenis_ternak_count }}</td>
+                <td class="right">Jenis Tanaman : {{ $jenis_tanaman_count }}</td>
             </tr>
             <tr>
-                <td>Total Data : {{ $peternakans->count() }}</td>
-                <td class="right">Hewan Ternak : {{ $hewan_ternak_count }}</td>
+                <td>Total Data : {{ $pertanians->count() }}</td>
+                <td class="right">Luas Tanam : {{ $luas_tanam_count }}</td>
             </tr>
         </tbody>
     </table>
@@ -84,24 +84,20 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Jenis Ternak</th>
-                <th>Hewan Ternak</th>
-                <th>Pakan</th>
-                <th>Umur Ternak</th>
-                <th>Berat Ternak</th>
-                <th>Jumlah Ternak</th>
+                <th>Jenis Tanaman</th>
+                <th>Waktu Tanam</th>
+                <th>Waktu Panen</th>
+                <th>Luas Wilayah Tanam</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($peternakans as $item)
+            @foreach ($pertanians as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->jenis_ternak }}</td>
-                    <td>{{ $item->hewan_ternak }}</td>
-                    <td>{{ $item->pakan }}</td>
-                    <td>{{ $item->umur_ternak }} Tahun</td>
-                    <td>{{ $item->berat_ternak }} Kg</td>
-                    <td>{{ $item->jumlah_ternak }} Ekor</td>
+                    <td>{{ $item->jenis_tanaman }}</td>
+                    <td>{{ $item->waktu_tanam }}</td>
+                    <td>{{ $item->waktu_panen }}</td>
+                    <td>{{ $item->luas_wilayah_tanam }} m<sup>2</sup></td>
                 </tr>
             @endforeach
         </tbody>

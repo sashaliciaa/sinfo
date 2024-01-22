@@ -11,9 +11,13 @@
                     <i class="fas fa-table me-1"></i>
                     Data Pertanian
                 </span>
-                <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
-                    Tambah Data
-                </button>
+                <div class="ml-auto">
+                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
+                        Tambah Data
+                    </button>
+                    <a href="{{ route('pertanian.printReport') }}" class="btn btn-dark" target="_blank"><i
+                            class="fas fa-print"></i> Print</a>
+                </div>
             </div>
         </div>
         <div class="card-body">
@@ -131,7 +135,8 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Pertanian {{ $item->jenis_tanaman }}
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Pertanian
+                            {{ $item->jenis_tanaman }}
                         </h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -163,9 +168,15 @@
                             <!-- Luas Wilayah Tanam Input -->
                             <div class="form-group">
                                 <label for="luas_wilayah_tanam" class="form-label">Luas Wilayah Tanam</label>
-                                <input type="text" class="form-control" id="luas_wilayah_tanam"
-                                    name="luas_wilayah_tanam" value="{{ $item->luas_wilayah_tanam }}" required>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Masukkan Luas Wilayah Tanam"
+                                        id="luas_wilayah_tanam" name="luas_wilayah_tanam"
+                                        aria-label="Masukkan Luas Wilayah Tanam" aria-describedby="basic-addon2"
+                                        value="{{ $item->luas_wilayah_tanam }}" required>
+                                    <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
+                                </div>
                             </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

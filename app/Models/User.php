@@ -32,6 +32,7 @@ class User extends Authenticatable
         'jabatan_id',
         'tgl_mulai_jabat',
         'foto',
+        'status',
     ];
 
     /**

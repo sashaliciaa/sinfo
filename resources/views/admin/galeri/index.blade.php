@@ -20,6 +20,11 @@
                     <p>{{ $message }}</p>
                 </div>
             @endif
+            @if ($message = Session::get('fail'))
+                <div class="alert alert-danger">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <table id="datatablesSimple" class="table table-striped table-bordered">
                 <thead>
                     <tr>

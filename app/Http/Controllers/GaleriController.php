@@ -38,9 +38,9 @@ class GaleriController extends Controller
                 'foto_galeri' => $nama_file,
             ]);
 
-            return redirect()->route('galeri.index')->with('success', 'Foto berhasil disimpan.');
+            return redirect()->route('galeri.index')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
-            return redirect()->route('galeri.index')->with('fail', 'Foto gagal disimpan' . $e->getMessage());
+            return redirect()->route('galeri.index')->with('fail', 'Data gagal diperbarui, File yang anda upload bukan gambar.');
         }
     }
 
@@ -53,7 +53,7 @@ class GaleriController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $this->validate($request, [
+            $validatedData = $request->validate([
                 'nama_foto' => 'required',
                 'foto_galeri' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
@@ -66,22 +66,22 @@ class GaleriController extends Controller
                 $tujuan_upload = "Foto_galeri";
                 $file->move($tujuan_upload, $nama_file);
 
-                // Delete the previous photo
-                $photo_path = public_path('Foto_galeri/' . $galeri->foto_galeri);
-                if (file_exists($photo_path)) {
-                    unlink($photo_path);
+                // Delete the old photo if it exists
+                $old_photo = public_path('Foto_galeri/' . $galeri->foto_galeri);
+                if (file_exists($old_photo)) {
+                    unlink($old_photo);
                 }
 
-                // Update the photo record
-                $galeri->update([
-                    'nama_foto' => $nama_file,
-                    'foto_galeri' => $nama_file,
-                ]);
+                $galeri->foto_galeri = $nama_file;
             }
 
-            return redirect()->route('galeri.index')->with('success', 'Foto berhasil diperbarui.');
+            $galeri->update([
+                'nama_foto' => $validatedData['nama_foto'],
+            ]);
+
+            return redirect()->route('galeri.index')->with('success', 'Data berhasil diperbarui.');
         } catch (\Exception $e) {
-            return redirect()->route('galeri.index')->with('fail', 'Foto gagal diperbarui' . $e->getMessage());
+            return redirect()->route('galeri.index')->with('fail', 'Data gagal diperbarui, File yang anda upload bukan gambar.');
         }
     }
 

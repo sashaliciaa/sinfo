@@ -38,6 +38,7 @@ class PerangkatDesaController extends Controller
                 'telp' => 'required',
                 'jabatan' => 'required',
                 'tgl_mulai_jabat' => 'required|date',
+                'status' => 'required',
                 'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
 
@@ -56,6 +57,7 @@ class PerangkatDesaController extends Controller
                 'telp' => $request->telp,
                 'jabatan_id' => $request->jabatan,
                 'tgl_mulai_jabat' => $request->tgl_mulai_jabat,
+                'status' => $request->status,
                 'foto' => $nama_file,
             ]);
 
@@ -84,6 +86,7 @@ class PerangkatDesaController extends Controller
                 'telp' => 'required',
                 'jabatan' => 'required',
                 'tgl_mulai_jabat' => 'required|date',
+                'status' => 'required',
                 'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
 
@@ -118,6 +121,7 @@ class PerangkatDesaController extends Controller
                 'telp' => $validatedData['telp'],
                 'jabatan_id' => $validatedData['jabatan'],
                 'tgl_mulai_jabat' => $validatedData['tgl_mulai_jabat'],
+                'status' => $validatedData['status'],
             ]);
 
             return redirect()->route('perangkatdesa.index')->with('success', 'Data berhasil diperbarui.');

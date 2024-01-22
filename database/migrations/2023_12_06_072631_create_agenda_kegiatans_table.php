@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('agenda_kegiatans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_agenda');
+            $table->date('tgl_kegiatan');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
+            $table->string('tempat');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }

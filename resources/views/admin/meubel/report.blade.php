@@ -1,14 +1,12 @@
-<!-- resources/views/admin/peternakan/report.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan Data Peternakan</title>
+    <title>Laporan Data Meubel</title>
     <style>
-        /* Atur gaya cetak sesuai kebutuhan Anda */
+        /* Adjust the printing style as needed */
         body {
             font-family: Arial, sans-serif;
         }
@@ -53,7 +51,7 @@
         <tbody>
             <tr>
                 <td>
-                    <h2 style="margin: 0px">Laporan Data Peternakan Desa Sindangmekar</h2>
+                    <h2 style="margin: 0px">Laporan Data Meubel Desa Sindangmekar</h2>
                     <small>Dukupuntang, Cirebon, Jawa Barat, Indonesia . </small>
                 </td>
                 <td class="right" style="width: 50%">
@@ -71,11 +69,10 @@
             </tr>
             <tr>
                 <td>{{ Auth::user()->nama_awal }} {{ Auth::user()->nama_akhir }} - {{ date('d F Y') }}</td>
-                <td class="right">Jenis Ternak : {{ $jenis_ternak_count }}</td>
+                <td class="right">Total Meubelers : {{ $jumlah_meubelers_count }}</td>
             </tr>
             <tr>
-                <td>Total Data : {{ $peternakans->count() }}</td>
-                <td class="right">Hewan Ternak : {{ $hewan_ternak_count }}</td>
+                <td>Total Data : {{ $meubels->count() }}</td>
             </tr>
         </tbody>
     </table>
@@ -84,24 +81,18 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Jenis Ternak</th>
-                <th>Hewan Ternak</th>
-                <th>Pakan</th>
-                <th>Umur Ternak</th>
-                <th>Berat Ternak</th>
-                <th>Jumlah Ternak</th>
+                <th>Jumlah Meubelers</th>
+                <th>Jenis Meubel</th>
+                <!-- Add more columns as needed -->
             </tr>
         </thead>
         <tbody>
-            @foreach ($peternakans as $item)
+            @foreach ($meubels as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->jenis_ternak }}</td>
-                    <td>{{ $item->hewan_ternak }}</td>
-                    <td>{{ $item->pakan }}</td>
-                    <td>{{ $item->umur_ternak }} Tahun</td>
-                    <td>{{ $item->berat_ternak }} Kg</td>
-                    <td>{{ $item->jumlah_ternak }} Ekor</td>
+                    <td>{{ $item->jumlah_meubelers }}</td>
+                    <td>{{ $item->jenis_meubel }}</td>
+                    <!-- Add more columns as needed -->
                 </tr>
             @endforeach
         </tbody>
