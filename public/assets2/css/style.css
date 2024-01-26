@@ -94,7 +94,7 @@ h6 {
 }
 
 .back-to-top:hover {
-    background: #3284f1;
+    background: #000000;
     color: #fff;
 }
 
@@ -1171,7 +1171,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-links a:hover {
-    color: #6ba7f5;
+    color: #585555;
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {

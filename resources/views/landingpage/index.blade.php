@@ -45,8 +45,7 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center"><a
-                        href="mailto:contact@example.com">contact@example.com</a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+62 5589 55488 55</span></i>
+                        href="mailto:desasindangmekar57@gmail.com">desasindangmekar57@gmail.com</a></i>
             </div>
         </div>
     </section>
@@ -82,12 +81,13 @@
                             <li><a href="#perkebunan">Perkebunan</a></li>
                             <li><a href="#peternakan">Peternakan</a></li>
                             <li><a href="#perikanan">Perikanan</a></li>
+                            <li><a href="#meubel">Meubel</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#"><span>Informasi Publik</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Agenda Kegiatan</a></li>
+                            <li><a href="#agendakegiatan">Agenda Kegiatan</a></li>
                             <li><a href="#galeri">Galeri</a></li>
                         </ul>
                     </li>
@@ -274,109 +274,189 @@
 
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/kepaladesa.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>kepala Desa</span>
+                                <h4>KEPALA DESA</h4>
+                                <h6>MUHAIMIN,S.Pd.I</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-2.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/sekretarisdesa.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
+                                <h4>SEKRETARIS DESA</h4>
+                                <h6>SIHABUDIN</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-3.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/kaurtatausahaumum.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
+                                <h4>KAUR TATA USAHA & UMUM</h4>
+                                <h6>ARIS SUSANTO</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-4.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/kaurkeuangan.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
+                                <h4>KAUR KEUANGAN</h4>
+                                <h6>SRI RAHAYU</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-4.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/staffkeuangan.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
+                                <h4>STAF KEUANGAN</h4>
+                                <h6>WULAN WINDASARI</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/kaurperencanaan.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>kepala Desa</span>
+                                <h4>KAUR PERENCANAAN</h4>
+                                <h6>ADI ROKADI</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-2.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/kasipemerintahan.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
+                                <h4>KASI PEMERINTAHAN</h4>
+                                <h6>KARJONO</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets2/img/team/team-3.jpg" class="img-fluid" alt="">
+                                <img src="{{asset('assets2/img/perangkatdesa/kasikesejahteraan.jpg')}}" class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
+                                <h4>KASI KESEJAHTERAAN</h4>
+                                <h6>ABDUL HAMID</h6>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{asset('assets2/img/perangkatdesa/kasipelayanan.jpg')}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KASI PELAYANAN</h4>
+                                <h6>AHMAD ROFI'I</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{asset('assets2/img/perangkatdesa/kepaladusun1.jpg')}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN I</h4>
+                                <h6>AJAT SUDRAJAT</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{asset('assets2/img/perangkatdesa/kosong.jpg')}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN II</h4>
+                                <h6>-</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{asset('assets2/img/perangkatdesa/kepaladusun3.jpg')}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN III</h4>
+                                <h6>NUR AFANDI</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{asset('assets2/img/perangkatdesa/kepaladusun4.jpg')}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN IV</h4>
+                                <h6>SUJAYA</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{asset('assets2/img/perangkatdesa/staffpemdes.jpg')}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>STAFF PEMDES</h4>
+                                <h6>RODIAH</h6>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
             </div>
@@ -501,70 +581,137 @@
                         </P>
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- End Perikanan -->
 
-        <!-- ======= Galeri Section ======= -->
+        <!-- ======= Meuble ======= -->
+        <section id="meubel" class="about section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h3> <span>MEUBEL</span></h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <img src="{{ asset('assets2/img/meubel.jpg') }}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <h3>DESKRIPSI MEUBEL</h3>
+                        <P>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Meubel -->
+
+         <!-- ======= Portfolio Details Section ======= -->
+    <section id="agendakegiatan" class="portfolio-details">
+        <div class="container">
+
+            <div class="section-title">
+                <h3> <span>AGENDA KEGIATAN</span></h3>
+            </div>
+
+          <div class="row gy-4">
+
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+
+                  <div class="swiper-slide">
+                    <img src="{{asset('assets2/img/launchingbanksampah.jpg')}}" alt="">
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img src="{{asset('assets2/img/portfolio/portfolio-details-1.jpg')}}" alt="">
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img src="{{asset('assets2/img/portfolio/portfolio-details-1.jpg')}}" alt="">
+                  </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="portfolio-description">
+                <h2>This is an example of portfolio detail</h2>
+                <p>
+                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                </p>
+              </div>
+              <a href="agenda.kegiatan.detail.php" class="btn btn-dark">Agenda Lainnya >></a>
+            </div>
+        </div>
+        </div>
+      </section><!-- End Portfolio Details Section -->
+
+        <!-- ======= Portfolio Section ======= -->
         <section id="galeri" class="portfolio">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h3><span>GALERI</span></h3>
+                    <h3> <span>GALERI DESA</span></h3>
                 </div>
 
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+              <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-1.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-2.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-3.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-4.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-5.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-6.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-7.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-8.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="{{ asset('assets2/img/portfolio/portfolio-9.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <img src="assets2/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                 </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <img src="{{asset('assets2/img/launchingbanksampah.jpg')}}" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <img src="assets2/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                  <img src="assets2/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <img src="assets2/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                  <img src="assets2/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                  <img src="assets2/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                  <img src="assets2/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                  <img src="assets2/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                </div>
+
+              </div>
 
             </div>
-        </section><!-- End Galeri Section -->
+          </section>
+          <!-- End Portfolio Section -->
+</body>
+</html>
 
         <!-- ======= Contact Section ======= -->
         <section id="lokasi" class="contact">
@@ -625,8 +772,7 @@
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h3><span>Kontak Kami</span></h3>
-                        <p><strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            <strong>Email:</strong>desasindangmekar57@gmail.com<br>
                         </p>
                     </div>
 
