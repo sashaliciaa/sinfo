@@ -8,19 +8,12 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    {{-- <form action="{{ route('agendakegiatan.index') }}" method="GET" class="mb-3">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Cari agenda..." name="search"
-                value="{{ request('search') }}">
-            <button class="btn btn-secondary" type="submit">Cari</button>
-        </div>
-    </form> --}}
     <div id='calendar'></div>
 
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success text-white" style="max-height: 40px">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Agenda Kegiatan</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -59,8 +52,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-success w-100">Simpan</button>
                     </div>
                 </form>
 

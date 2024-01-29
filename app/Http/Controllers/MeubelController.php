@@ -24,13 +24,13 @@ class MeubelController extends Controller
     {
         try {
             $this->validate($request, [
-                'jumlah_meubelers' => 'required|integer',
+                'jumlah_meubeler' => 'required|integer',
                 'jenis_meubel' => 'required',
                 // Add other validation rules as needed
             ]);
 
             Meubel::create([
-                'jumlah_meubelers' => $request->jumlah_meubelers,
+                'jumlah_meubeler' => $request->jumlah_meubeler,
                 'jenis_meubel' => $request->jenis_meubel,
                 // Add other fields as needed
             ]);
@@ -51,7 +51,7 @@ class MeubelController extends Controller
     {
         try {
             $this->validate($request, [
-                'jumlah_meubelers' => 'required|integer',
+                'jumlah_meubeler' => 'required|integer',
                 'jenis_meubel' => 'required',
                 // Add other validation rules as needed
             ]);
@@ -63,7 +63,7 @@ class MeubelController extends Controller
             }
 
             $meubel->update([
-                'jumlah_meubelers' => $request->jumlah_meubelers,
+                'jumlah_meubeler' => $request->jumlah_meubeler,
                 'jenis_meubel' => $request->jenis_meubel,
                 // Add other fields as needed
             ]);
@@ -92,9 +92,9 @@ class MeubelController extends Controller
         $meubels = Meubel::all();
         $jenis_meubel = Meubel::select('jenis_meubel')->distinct()->get();
 
-        $jumlah_meubelers_count = Meubel::sum('jumlah_meubelers');
+        $jumlah_meubeler_count = Meubel::sum('jumlah_meubeler');
 
-        $pdf = app('dompdf.wrapper')->loadView('admin.meubel.report', compact('meubels', 'jumlah_meubelers_count'));
+        $pdf = app('dompdf.wrapper')->loadView('admin.meubel.report', compact('meubels', 'jumlah_meubeler_count'));
 
         return $pdf->stream('laporan_meubel.pdf');
     }

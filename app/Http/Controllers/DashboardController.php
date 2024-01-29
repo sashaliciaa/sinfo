@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Meubel;
 use App\Models\dashboard;
+use App\Models\Perikanan;
+use App\Models\Pertanian;
+use App\Models\Perkebunan;
+use App\Models\Peternakan;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
 {
@@ -17,7 +23,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        $pertanians = Pertanian::all();
+        $peternakans = Peternakan::all();
+        $perkebunans = Perkebunan::all();
+        $perikanans = Perikanan::all();
+        $meubels = Meubel::all();
+        return view('admin.dashboard.index', compact('pertanians', 'peternakans', 'perkebunans', 'perikanans', 'meubels'));
     }
 
     /**

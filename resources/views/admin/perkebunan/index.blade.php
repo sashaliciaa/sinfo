@@ -12,7 +12,7 @@
                     Data Perkebunan
                 </span>
                 <div class="ml-auto">
-                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
+                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
                         Tambah Data
                     </button>
                     <a href="{{ route('perkebunan.printReport') }}" class="btn btn-dark" target="_blank"><i
@@ -51,14 +51,11 @@
                                         data-bs-target="#modalEdit{{ $item->id }}">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <form action="{{ route('perkebunan.destroy', $item->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="javascript: return confirm('Apakah Anda Ingin Menghapus Data Ini..?')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                    <!-- Delete Button -->
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#modalDelete{{ $item->id }}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -71,7 +68,7 @@
     <div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success text-white" style="max-height: 40px">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Perkebunan</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -106,8 +103,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-success w-100">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -119,8 +115,8 @@
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Perkebunan {{ $item->jenis_tanaman }}
+                    <div class="modal-header bg-warning" style="max-height: 40px">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data | {{ $item->jenis_tanaman }}
                         </h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -157,12 +153,41 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-warning text-white">Simpan Perubahan</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     @endforeach
+
+    <!-- Modal Delete -->
+    @foreach ($perkebunans as $deleteItem)
+        <div class="modal fade" id="modalDelete{{ $deleteItem->id }}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Anda yakin ingin menghapus <b>{{ $deleteItem->jenis_tanaman }}</b> ?
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <form action="{{ route('perkebunan.destroy', $deleteItem->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    <!-- End Modal Delete -->
 @endsection
