@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="mt-4 text-center">Galeri Foto</h3>
+    <h3 class="mt-4 text-center">Foto Galeri</h3>
     <div class="card mb-4">
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
                 <span>
                     <i class="fas fa-images me-1"></i>
-                    Galeri Foto
+                    Foto Galeri
                 </span>
-                <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
+                <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
                     Tambah Foto
                 </button>
             </div>
@@ -69,7 +69,7 @@
     <div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success text-white" style="max-height: 40px">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Foto Galeri</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -89,8 +89,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-success w-100">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -102,7 +101,7 @@
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-warning" style="max-height: 40px">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Foto Galeri</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>

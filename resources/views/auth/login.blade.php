@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Login Admin</title>
+    <title>{{ env('APP_NAME') }} - Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{{ asset('assets3/images/desa-sindangmekar.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('assets3/images/logo.png') }}" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets3/vendor/bootstrap/css/bootstrap.min.css') }}">
     <!--===============================================================================================-->
@@ -64,7 +64,7 @@
 
                 </form>
 
-                <div class="login100-more" style="background-image: url('../assets3/images/desa-sindangmekar.png');">
+                <div class="login100-more" style="background-image: url('../assets3/images/logo.png');">
                 </div>
             </div>
         </div>

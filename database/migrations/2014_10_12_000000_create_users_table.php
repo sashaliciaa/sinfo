@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('telp');
             $table->date('tgl_mulai_jabat');
             $table->text('foto');
+            $table->string('foto')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

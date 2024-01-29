@@ -12,7 +12,7 @@
                     Data Meubel
                 </span>
                 <div class="ml-auto">
-                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
+                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#modalAdd">
                         Tambah Data
                     </button>
                     <a href="{{ route('meubel.printReport') }}" class="btn btn-dark" target="_blank"><i
@@ -30,7 +30,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Jumlah Meubelers</th>
+                        <th>Jumlah Meubeler</th>
                         <th>Jenis Meubel</th>
                         <!-- Add more columns as needed -->
                         <th>Aksi</th>
@@ -40,7 +40,7 @@
                     @foreach ($meubels as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->jumlah_meubelers }}</td>
+                            <td>{{ $item->jumlah_meubeler }}</td>
                             <td>{{ $item->jenis_meubel }}</td>
                             <!-- Add more columns as needed -->
                             <td>
@@ -49,14 +49,11 @@
                                         data-bs-target="#modalEdit{{ $item->id }}">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <form action="{{ route('meubel.destroy', $item->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="javascript: return confirm('Apakah Anda Ingin Menghapus Data Ini..?')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                    <!-- Delete Button -->
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#modalDelete{{ $item->id }}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -66,11 +63,11 @@
         </div>
     </div>
 
-    <!-- Add Modal for Adding Data -->
+    <!-- Modal Add -->
     <div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-success text-white" style="max-height: 40px">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Meubel</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -78,11 +75,11 @@
                     @csrf
                     @method('POST')
                     <div class="modal-body">
-                        <!-- Jumlah Meubelers Input -->
+                        <!-- Jumlah meubeler Input -->
                         <div class="form-group">
-                            <label for="jumlah_meubelers" class="form-label">Jumlah Meubelers</label>
-                            <input type="number" class="form-control" id="jumlah_meubelers" name="jumlah_meubelers"
-                                placeholder="Masukkan Jumlah Meubelers" required>
+                            <label for="jumlah_meubeler" class="form-label">Jumlah Meubeler</label>
+                            <input type="number" class="form-control" id="jumlah_meubeler" name="jumlah_meubeler"
+                                placeholder="Masukkan Jumlah meubeler" required>
                         </div>
 
                         <!-- Jenis Meubel Input -->
@@ -93,8 +90,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-success w-100">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -102,25 +98,25 @@
     </div>
 
 
-    <!-- Add Modals for Editing Data -->
+    <!-- Modal Edit -->
     @foreach ($meubels as $item)
         <div class="modal fade" id="modalEdit{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data Meubel {{ $item->jenis_meubel }}</h1>
+                    <div class="modal-header bg-warning" style="max-height: 40px">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data | {{ $item->jenis_meubel }}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form method="POST" action="{{ route('meubel.update', $item->id) }}">
                         @csrf
                         @method('PUT')
                         <div class="modal-body">
-                            <!-- Jumlah Meubelers Input -->
+                            <!-- Jumlah meubeler Input -->
                             <div class="form-group">
-                                <label for="jumlah_meubelers" class="form-label">Jumlah Meubelers</label>
-                                <input type="number" class="form-control" id="jumlah_meubelers" name="jumlah_meubelers"
-                                    value="{{ $item->jumlah_meubelers }}" required>
+                                <label for="jumlah_meubeler" class="form-label">Jumlah Meubeler</label>
+                                <input type="number" class="form-control" id="jumlah_meubeler" name="jumlah_meubeler"
+                                    value="{{ $item->jumlah_meubeler }}" required>
                             </div>
 
                             <!-- Jenis Meubel Input -->
@@ -131,12 +127,40 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-warning text-white">Simpan Perubahan</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     @endforeach
+
+    <!-- Modal Delete -->
+    @foreach ($meubels as $deleteItem)
+        <div class="modal fade" id="modalDelete{{ $deleteItem->id }}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Anda yakin ingin menghapus <b>{{ $deleteItem->jenis_meubel }}</b> ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <form action="{{ route('meubel.destroy', $deleteItem->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    <!-- End Modal Delete -->
 @endsection

@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td>{{ Auth::user()->nama_awal }} {{ Auth::user()->nama_akhir }} - {{ date('d F Y') }}</td>
-                <td class="right">Total Meubelers : {{ $jumlah_meubelers_count }}</td>
+                <td class="right">Total Meubeler : {{ $jumlah_meubeler_count }}</td>
             </tr>
             <tr>
                 <td>Total Data : {{ $meubels->count() }}</td>
@@ -81,7 +81,7 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Jumlah Meubelers</th>
+                <th>Jumlah Meubeler</th>
                 <th>Jenis Meubel</th>
                 <!-- Add more columns as needed -->
             </tr>
@@ -90,7 +90,7 @@
             @foreach ($meubels as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->jumlah_meubelers }}</td>
+                    <td>{{ $item->jumlah_meubeler }}</td>
                     <td>{{ $item->jenis_meubel }}</td>
                     <!-- Add more columns as needed -->
                 </tr>

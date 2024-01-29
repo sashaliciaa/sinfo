@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('perikanans', function (Blueprint $table) {
             $table->id();
+            $table->string('jenis_ikan');
+            $table->string('pakan');
+            $table->string('jumlah_ikan');
+            $table->string('berat_ikan');
             $table->timestamps();
         });
     }
