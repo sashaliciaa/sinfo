@@ -33,7 +33,7 @@ class AgendaKegiatanController extends Controller
     {
         $request->validate([
             "nama_agenda" => "required",
-            "tgl_kegiatan" => "required",
+            "tgl_kegiatan_mulai" => "required",
             "jam_mulai" => "required",
             "tempat" => "required",
         ]);

@@ -32,9 +32,14 @@
                                 placeholder="Masukkan Tempat" autofocus required autocomplete="">
                         </div>
                         <div class="form-group">
-                            <label for="tgl_kegiatan" class="form-label">Tanggal Kegiatan</label>
-                            <input type="date" class="form-control" id="tgl_kegiatan" name="tgl_kegiatan"
-                                placeholder="Masukkan Tanggal Kegiatan" autofocus required autocomplete="">
+                            <label for="_mulai" class="form-label">Tanggal Kegiatan Mulai</label>
+                            <input type="date" class="form-control" id="_mulai_mulai" name="_mulai_mulai"
+                                placeholder="Masukkan Tanggal Kegiatan Mulai" autofocus required autocomplete="">
+                        </div>
+                        <div class="form-group">
+                            <label for="_mulai" class="form-label">Tanggal Kegiatan selesai</label>
+                            <input type="date" class="form-control" id="_mulai_selesai" name="tgl_kegiatan_selesai"
+                                placeholder="Masukkan Tanggal Kegiatan Mulai" autofocus required autocomplete="">
                         </div>
                         <div class="form-group">
                             <label for="jam_mulai" class="form-label">Jam Mulai</label>
@@ -82,9 +87,14 @@
                                 <td>{{ $item->tempat }}</td>
                             </tr>
                             <tr>
-                                <td>Tgl Kegiatan</td>
+                                <td>Tgl Kegiatan Mulai</td>
                                 <td>:</td>
-                                <td>{{ $item->tgl_kegiatan }}</td>
+                                <td>{{ $item->tgl_kegiatan_mulai }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tgl Kegiatan Selesai</td>
+                                <td>:</td>
+                                <td>{{ $item->tgl_kegiatan_selesai }}</td>
                             </tr>
                             <tr>
                                 <td>Jam Mulai</td>
@@ -161,7 +171,7 @@
                     @foreach ($agenda as $item)
                         {
                             title: '{{ $item->nama_agenda }}',
-                            start: '{{ $item->tgl_kegiatan }}',
+                            start: '{{ $item->_mulai }}',
                             extendedProps: {
                                 id: '{{ $item->id }}',
                                 jam_mulai: '{{ $item->jam_mulai }}',
