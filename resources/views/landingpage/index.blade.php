@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('../BizLand/assets/img/desa-sindangmekar.png') }}" rel="icon">
-    <link href="{{ asset('../BizLand/assets/img/desa-sindangmekar.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('assets2/img/desa-sindangmekar.png') }}" rel="icon">
+    <link href="{{ asset('assets2/img/desa-sindangmekar.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -19,15 +19,15 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('../BizLand/assets/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('../BizLand/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../BizLand/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('../BizLand/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../BizLand/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('../BizLand/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets2/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets2/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets2/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets2/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{{ asset('../BizLand/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets2/css/style.css') }}" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Sindangmekar
@@ -54,8 +54,7 @@
         <div class="container d-flex align-items-center justify-content-md-between">
 
             <h1 class="logo"><a href="index.html"><a href="index.html" class="logo"><img
-                            src="{{ asset('../BizLand/assets/img/desa-sindangmekar.png') }}" alt=""></a>
-                    Sindangmekar</a>
+                            src="{{ asset('assets2/img/desa-sindangmekar.png') }}" alt=""></a> Sindangmekar</a>
             </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
 
@@ -82,7 +81,7 @@
                             <li><a href="#perkebunan">Perkebunan</a></li>
                             <li><a href="#peternakan">Peternakan</a></li>
                             <li><a href="#perikanan">Perikanan</a></li>
-                            <li><a href="#perikanan">Meubel</a></li>
+                            <li><a href="#meubel">Meubel</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#"><span>Informasi Publik</span> <i
@@ -174,7 +173,8 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/desa-sindangmekar.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/desa-sindangmekar.png') }}" class="img-fluid"
+                            alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
@@ -217,7 +217,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/visimisi.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/visimisi.png') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
@@ -256,7 +256,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12" data-aos="fade-right" data-aos-delay="100" style="text-align: center;">
-                        <img src="{{ asset('assets/img/strukturorganisasi.jpg') }}" class="img-fluid"
+                        <img src="{{ asset('assets2/img/strukturorganisasi.jpg') }}" class="img-fluid"
                             alt="">
                     </div>
                 </div>
@@ -274,109 +274,203 @@
 
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladesa.jpg') }}" class="img-fluid"
+                                    alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>kepala Desa</span>
+                                <h4>KEPALA DESA</h4>
+                                <h6>MUHAIMIN,S.Pd.I</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/sekretarisdesa.jpg') }}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
+                                <h4>SEKRETARIS DESA</h4>
+                                <h6>SIHABUDIN</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kaurtatausahaumum.jpg') }}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
+                                <h4>KAUR TATA USAHA & UMUM</h4>
+                                <h6>ARIS SUSANTO</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kaurkeuangan.jpg') }}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
+                                <h4>KAUR KEUANGAN</h4>
+                                <h6>SRI RAHAYU</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/staffkeuangan.jpg') }}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
+                                <h4>STAF KEUANGAN</h4>
+                                <h6>WULAN WINDASARI</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kaurperencanaan.jpg') }}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>kepala Desa</span>
+                                <h4>KAUR PERENCANAAN</h4>
+                                <h6>ADI ROKADI</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kasipemerintahan.jpg') }}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
+                                <h4>KASI PEMERINTAHAN</h4>
+                                <h6>KARJONO</h6>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="member">
+                        <div class="member text-center">
                             <div class="member-img">
-                                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kasikesejahteraan.jpg') }}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
+                                <h4>KASI KESEJAHTERAAN</h4>
+                                <h6>ABDUL HAMID</h6>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kasipelayanan.jpg') }}"
+                                    class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KASI PELAYANAN</h4>
+                                <h6>AHMAD ROFI'I</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladusun1.jpg') }}"
+                                    class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN I</h4>
+                                <h6>AJAT SUDRAJAT</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kosong.jpg') }}" class="img-fluid"
+                                    alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN II</h4>
+                                <h6>-</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladusun3.jpg') }}"
+                                    class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN III</h4>
+                                <h6>NUR AFANDI</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladusun4.jpg') }}"
+                                    class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>KEPALA DUSUN IV</h4>
+                                <h6>SUJAYA</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="member text-center">
+                            <div class="member-img">
+                                <img src="{{ asset('assets2/img/perangkatdesa/staffpemdes.jpg') }}" class="img-fluid"
+                                    alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>STAFF PEMDES</h4>
+                                <h6>RODIAH</h6>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
             </div>
@@ -392,7 +486,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/sawah.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/sawah.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
@@ -423,7 +517,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/perkebunan.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/perkebunan.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
@@ -454,7 +548,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/peternakan.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/peternakan.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
@@ -485,7 +579,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/perikanan.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/perikanan.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
@@ -501,174 +595,141 @@
                         </P>
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- End Perikanan -->
 
-        <!-- ======= Agenda Kegiatan Section ======= -->
-        <section id="agendakegiatan" class="portfolio">
+        <!-- ======= Meuble ======= -->
+        <section id="meubel" class="about section-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h3><span>AGENDA KEGIATAN</span></h3>
+                    <h3> <span>MEUBEL</span></h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <img src="{{ asset('assets2/img/meubel.jpg') }}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <h3>DESKRIPSI MEUBEL</h3>
+                        <P>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Meubel -->
+
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="agendakegiatan" class="portfolio-details">
+            <div class="container">
+
+                <div class="section-title">
+                    <h3> <span>AGENDA KEGIATAN</span></h3>
+                </div>
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-8">
+                        <div class="portfolio-details-slider swiper">
+                            <div class="swiper-wrapper align-items-center">
+
+                                <div class="swiper-slide">
+                                    <img src="{{ asset('assets2/img/launchingbanksampah.jpg') }}" alt="">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="{{ asset('assets2/img/portfolio/portfolio-details-1.jpg') }}"
+                                        alt="">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="{{ asset('assets2/img/portfolio/portfolio-details-1.jpg') }}"
+                                        alt="">
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-description">
+                            <h2>This is an example of portfolio detail</h2>
+                            <p>
+                                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi
+                                labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque
+                                itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur
+                                dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                            </p>
+                        </div>
+                        <a href="agenda.kegiatan.detail.php" class="btn btn-dark">Agenda Lainnya >></a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Portfolio Details Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="galeri" class="portfolio">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h3> <span>GALERI DESA</span></h3>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                    <div class="col-lg-12 col-md-12 portfolio-item filter-app" style="text-align: center;">
-                        <img src="{{ asset('../BizLand/assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid"
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets2/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="{{ asset('assets2/img/launchingbanksampah.jpg') }}" class="img-fluid"
                             alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets2/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets2/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets2/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="assets2/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets2/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <img src="assets2/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <img src="assets2/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
                     </div>
 
                 </div>
 
             </div>
-        </section><!-- End Agenda Kegiatam Section -->
-
-        <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
-            <div class="container aos-init aos-animate" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Portfolio</h2>
-                    <h3>Check our <span>Portfolio</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
-                </div>
-
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200"
-                    style="position: relative; height: 1097.31px;">
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app"
-                        style="position: absolute; left: 0px; top: 0px;">
-                        <img src="{{ asset('../BizLand/assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid"
-                            alt="">
-                        <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                            <a href="{{ asset('../BizLand/assets/img/portfolio/portfolio-1.jpg') }}"
-                                data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
-                                title="App 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="{{ asset('../BizLand/assets/img/portfolio/portfolio-2.jpg') }}" class="img-fluid"
-                            alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <a href="{{ asset('../BizLand/assets/img/portfolio/portfolio-2.jpg') }}"
-                                data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
-                                title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="{{ asset('../BizLand/assets/img/portfolio/portfolio-3.jpg') }}" class="img-fluid"
-                            alt="">
-                        <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
-                            <a href="{{ asset('../BizLand/assets/img/portfolio/portfolio-3.jpg') }}"
-                                data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
-                                title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                            <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
-                            <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
-                            <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                            <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
-                            <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                    class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Portfolio Section -->
+        </section>
+        <!-- End Portfolio Section -->
 </body>
 
 </html>
@@ -759,17 +820,17 @@
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="{{ asset('../BizLand/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-<script src="{{ asset('../BizLand/assets/vendor/aos/aos.js') }}"></script>
-<script src="{{ asset('../BizLand/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('../BizLand/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-<script src="{{ asset('../BizLand/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('../BizLand/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-<script src="{{ asset('../BizLand/assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
-<script src="{{ asset('../BizLand/assets/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('assets2/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ asset('assets2/vendor/aos/aos.js') }}"></script>
+<script src="{{ asset('assets2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets2/vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ asset('assets2/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets2/vendor/swiper/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('assets2/vendor/waypoints/noframework.waypoints.js') }}"></script>
+<script src="{{ asset('assets2/vendor/php-email-form/validate.js') }}"></script>
 
 <!-- Template Main JS File -->
-<script src="{{ asset('../BizLand/assets/js/main.js') }}"></script>
+<script src="{{ asset('assets2/js/main.js') }}"></script>
 
 </body>
 
