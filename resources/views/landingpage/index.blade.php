@@ -470,15 +470,15 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
-                        <h3>3 KELOMPOK TANI</h3>
-                        <P>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                        <p style="text-align: justify;">
+                            Pertanian di Desa Sindangmekar adalah landasan utama kehidupan masyarakatnya, mencerminkan harmoni antara tradisi dan modernitas. Dengan tanaman padi sebagai tulang punggung ekonomi, petani Desa Sindangmekar juga aktif dalam diversifikasi pertanian dengan menanam jagung, kedelai, dan sayuran lainnya. Sistem pertanian yang dijalankan menunjukkan perpaduan antara praktik tradisional dan penggunaan teknologi modern, dengan irigasi yang baik untuk menjaga kestabilan pasokan air. Selain itu, peternakan ayam dan sapi memberikan kontribusi penting dalam mendiversifikasi pendapatan. <br>
+                            <h4>3 Kelompok Tani :</h4>
+                            1. Sampir jaya (paling luas)<br>
+                            2. Asem jaya<br>
+                            3. Bungur jaya<br><br>
+                            <div class col-lg-3>
+                            <a href="#" class="btn btn-dark">Data Pertanian <i class = "bx bx-chevron-right"></i></a>
+                            </div>
                         </P>
                     </div>
                 </div>
@@ -501,16 +501,12 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
-                        <h3>DESKRIPSI PERKEBUNAN</h3>
-                        <P>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                        <p style="text-align: justify;">
+                            Perkebunan di Desa Sindangmekar memainkan peran krusial dalam membangun perekonomian lokal. Tanaman-tanaman perkebunan seperti teh, kopi, dan buah-buahan tumbuh subur di lahan-lahan subur desa ini. Keahlian petani perkebunan dalam merawat dan mengelola tanaman mereka menciptakan hasil yang berkualitas tinggi. Sistem irigasi yang efisien turut mendukung pertumbuhan tanaman, sementara penerapan teknologi pertanian modern memberikan kontribusi pada peningkatan produktivitas. Masyarakat Desa Sindangmekar terlibat aktif dalam asosiasi petani perkebunan, membentuk jaringan kerja sama yang kuat untuk memfasilitasi pemasaran hasil perkebunan dan meningkatkan kesejahteraan ekonomi mereka. Meskipun menghadapi tantangan seperti fluktuasi harga pasar dan perubahan iklim, semangat inovasi dan ketekunan petani perkebunan tetap menjadikan sektor ini sebagai salah satu pilar utama dalam perkembangan ekonomi desa.
                         </P>
+                        <div class col-lg-3>
+                            <a href="#" class="btn btn-dark">Data Perkebunan <i class = "bx bx-chevron-right"></i></a>
+                            </div>
                     </div>
                 </div>
 
@@ -532,16 +528,12 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
-                        <h3>DESKRIPSI PETERNAKAN</h3>
-                        <P>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                        <p style="text-align: justify;">
+                            Peternakan di Desa Sindangmekar menjadi pilar vital dalam struktur ekonomi lokal. Penduduk desa aktif terlibat dalam beternak ayam dan sapi, memberikan kontribusi penting dalam mendiversifikasi pendapatan masyarakat. Keahlian peternak dalam merawat ternak mereka menciptakan hasil yang berkualitas tinggi. Sistem manajemen peternakan modern, termasuk penerapan teknologi, membantu meningkatkan produktivitas dan kesejahteraan hewan. Masyarakat Desa Sindangmekar juga terorganisir dalam kelompok peternakan dan koperasi, memperkuat sinergi antarpeternak serta memfasilitasi pemasaran produk peternakan. Meskipun dihadapkan pada tantangan seperti fluktuasi harga dan faktor lingkungan, semangat berdaya saing dan inovasi di bidang peternakan tetap mempertahankan perannya sebagai aset kunci dalam pembangunan ekonomi desa.
                         </P>
+                        <div class col-lg-3>
+                            <a href="#" class="btn btn-dark">Data Peternakan <i class = "bx bx-chevron-right"></i></a>
+                            </div>
                     </div>
                 </div>
 
@@ -563,16 +555,12 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
-                        <h3>DESKRIPSI PERIKANAN</h3>
-                        <P>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                        <p style="text-align: justify;">
+                            Perikanan di Desa Sindangmekar memberikan kontribusi signifikan terhadap kehidupan masyarakat, melibatkan mereka dalam kegiatan penangkapan ikan dan budidaya perairan. Desa ini dikenal dengan keragaman jenis ikan air tawar yang ditangkap, seperti nila, lele, dan ikan mas. Selain itu, praktik budidaya ikan air tawar juga berkembang pesat, melibatkan petani perikanan yang mahir dalam memelihara dan meningkatkan produktivitas kolam ikan mereka. Sistem manajemen perikanan berbasis teknologi modern membantu meningkatkan hasil tangkapan dan keberlanjutan lingkungan. Masyarakat Desa Sindangmekar, terorganisir dalam kelompok perikanan, menjalankan prinsip-prinsip pembudidayaan ikan yang bertanggung jawab, menciptakan lingkungan yang mendukung ekosistem perairan dan memberikan manfaat ekonomi yang berkelanjutan bagi mereka. Meskipun menghadapi tantangan seperti perubahan iklim dan ketersediaan sumber daya, keberlanjutan dan inovasi terus menjadi fokus utama dalam menjaga kelestarian sektor perikanan desa.
                         </P>
+                        <div class col-lg-3>
+                            <a href="#" class="btn btn-dark">Data Perikanan <i class = "bx bx-chevron-right"></i></a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -593,16 +581,12 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
-                        <h3>DESKRIPSI MEUBEL</h3>
-                        <P>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                        <p style="text-align: justify;">
+                            Desa Sindangmekar menjadi pusat produksi meubel yang mengesankan, mencerminkan keahlian tinggi dan warisan tangan terampil masyarakatnya dalam industri perkayuan. Desa ini terkenal dengan berbagai jenis meubel berkualitas, seperti kursi, meja, dan lemari, yang diproduksi secara tradisional dengan sentuhan modern. Pengrajin meubel di Desa Sindangmekar mengutamakan kualitas bahan baku kayu yang digunakan, menciptakan produk yang tahan lama dan estetis. Proses produksi meubel ini melibatkan sejumlah tangan terampil, mulai dari pemilihan kayu hingga tahap penyelesaian dan pewarnaan. Koperasi pengrajin meubel lokal berperan penting dalam mendukung pemasaran dan distribusi produk, menciptakan dampak positif terhadap ekonomi desa serta mempromosikan keunikan desain meubel lokal. Meskipun dihadapkan pada tantangan dalam hal persaingan pasar dan bahan baku, industri produksi meubel di Desa Sindangmekar terus berkembang dan memberikan kontribusi yang berarti terhadap pertumbuhan ekonomi lokal.
                         </P>
+                        <div class col-lg-3>
+                            <a href="#" class="btn btn-dark">Data Meubel <i class = "bx bx-chevron-right"></i></a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -624,15 +608,15 @@
                 <div class="swiper-wrapper align-items-center">
 
                   <div class="swiper-slide">
-                    <img src="{{asset('assets2/img/launchingbanksampah.jpg')}}" alt="">
+                    <img src="{{asset('assets2/img/kegiatandesa/banksampah.jpg')}}" alt="">
                   </div>
 
                   <div class="swiper-slide">
-                    <img src="{{asset('assets2/img/portfolio/portfolio-details-1.jpg')}}" alt="">
+                    <img src="{{asset('assets2/img/kegiatandesa/banksampah2.jpg')}}" alt="">
                   </div>
 
                   <div class="swiper-slide">
-                    <img src="{{asset('assets2/img/portfolio/portfolio-details-1.jpg')}}" alt="">
+                    <img src="{{asset('assets2/img/kegiatandesa/banksampah3.jpg')}}" alt="">
                   </div>
 
                 </div>
@@ -642,12 +626,12 @@
 
             <div class="col-lg-4">
               <div class="portfolio-description">
-                <h2>This is an example of portfolio detail</h2>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                <h2>LAUNCHING BANK SAMPAH</h2>
+                <p style="text-align: justify;">
+                    Launching Bank Sampah di Desa Sindangmekar menjadi sebuah acara yang sangat dinantikan dan penuh antusiasme. Dengan suasana yang penuh semangat, warga desa berkumpul untuk merayakan dimulainya program ini. Acara dimulai dengan sambutan dari kepala desa dan perwakilan dari instansi terkait, yang menjelaskan tujuan dan manfaat dari pendirian Bank Sampah tersebut. Setelah itu, dilakukan pemotongan pita secara simbolis untuk menandai pembukaan resmi Bank Sampah. Warga juga diberikan pemahaman mengenai cara pengelolaan sampah yang benar, manfaat daur ulang, dan insentif yang dapat diperoleh melalui partisipasi aktif dalam program ini. Selain itu, kegiatan launching ini disertai dengan demonstrasi praktik pengelolaan sampah dan pengenalan jenis sampah yang dapat diolah melalui Bank Sampah. Semangat gotong-royong dan kesadaran lingkungan tercermin dari partisipasi aktif warga, menciptakan momentum positif untuk keberhasilan program Bank Sampah di Desa Sindangmekar.
                 </p>
               </div>
-              <a href="agenda.kegiatan.detail.php" class="btn btn-dark">Agenda Lainnya >></a>
+              <a href="agenda.kegiatan.detail.php" class="btn btn-dark">Agenda Lainnya <i class = "bx bx-chevron-right"></i></a>
             </div>
         </div>
         </div>
@@ -664,40 +648,40 @@
               <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                  <img src="assets2/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                  <img src="{{asset('assets2/img/kegiatandesa/banksampah2.jpg')}}" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                  <img src="{{asset('assets2/img/launchingbanksampah.jpg')}}" class="img-fluid" alt="">
+                  <img src="{{asset('assets2/img/kegiatandesa/musrenbangdes.jpg')}}" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                  <img src="assets2/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                  <img src="{{asset('assets2/img/kegiatandesa/banksampah2.jpg')}}" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                  <img src="assets2/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                  <img src="{{asset('assets2/img/kegiatandesa/rakordes.jpg')}}" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                  <img src="assets2/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                  <img src="assets2/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                  <img src="assets2/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                  <img src="assets2/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                  <img src="{{asset('assets2/img/kegiatandesa/banksampah3.jpg')}}" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                  <img src="assets2/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                </div>
+                    <img src="{{asset('assets2/img/kegiatandesa/banksampah3.jpg')}}" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <img src="{{asset('assets2/img/kegiatandesa/banksampah2.jpg')}}" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <img src="{{asset('assets2/img/kegiatandesa/rakordes.jpg')}}" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <img src="{{asset('assets2/img/kegiatandesa/musrenbangdes.jpg')}}" class="img-fluid" alt="">
+                  </div>
 
               </div>
 
@@ -738,37 +722,6 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h3><span>Profil</span></h3>
-                        <p>
-                            Sindangmekar adalah desa di kecamatan
-                            Dukupuntang, Cirebon, Jawa Barat, Indonesia.<br>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h3><span>Tautan</span></h3>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h3><span>Our Services</span></h3>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h3><span>Kontak Kami</span></h3>
-                            <strong>Email:</strong>desasindangmekar57@gmail.com<br>
-                        </p>
-                    </div>
 
                 </div>
             </div>
@@ -783,7 +736,7 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Sindangmekar-bootstrap-business-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="#">SiPalingRandom</a>
             </div>
         </div>
     </footer><!-- End Footer -->
