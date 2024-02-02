@@ -217,29 +217,23 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets2/img/visimisi.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/visimisi.jpg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
                         <h3>VISI</h3>
                         <P>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+                            Menjadi desa yang mandiri, sejahtera, dan berbudaya, diakui sebagai pusat pembangunan berkelanjutan di wilayah ini.
                         </P>
                         <h3>MISI</h3>
                         <P>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
+1. Pembangunan Ekonomi<br>
+2. Kesejahteraan Masyarakat<br>
+3. Pemeliharaan Lingkungan<br>
+4. Partisipasi Masyarakat<br>
+5. Pengembangan Budaya dan Pariwisata<br>
+6. Infrastruktur dan Aksesibilitas<br>
+7. Keamanan dan Ketertiban
                         </P>
                     </div>
                 </div>
@@ -256,7 +250,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12" data-aos="fade-right" data-aos-delay="100" style="text-align: center;">
-                        <img src="{{ asset('assets2/img/strukturorganisasi.jpg') }}" class="img-fluid"
+                        <img src="{{ asset('assets2/img/strukturorganisasi.png') }}" class="img-fluid"
                             alt="">
                     </div>
                 </div>
