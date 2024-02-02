@@ -49,55 +49,8 @@
             </div>
         </div>
     </section>
-    <!-- ======= Header ======= -->
-    <header id="header" class="d-flex align-items-center">
-        <div class="container d-flex align-items-center justify-content-md-between">
 
-            <h1 class="logo"><a href="index.html"><a href="index.html" class="logo"><img
-                            src="{{ asset('assets2/img/desa-sindangmekar.png') }}" alt=""></a> Sindangmekar</a>
-            </h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li class="dropdown"><a href="#topbar"><span>Profile Desa</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#tentangkami">Tentang Kami</a></li>
-                            <li><a href="#visimisi">Visi & Misi</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#"><span>Pemerintahan</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#strukturorganisasi">Struktur Organisasi</a></li>
-                            <li><a href="#perangkatdesa">Perangkat Desa</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#"><span>Potensi Desa</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#pertanian">Pertanian</a></li>
-                            <li><a href="#perkebunan">Perkebunan</a></li>
-                            <li><a href="#peternakan">Peternakan</a></li>
-                            <li><a href="#perikanan">Perikanan</a></li>
-                            <li><a href="#meubel">Meubel</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#"><span>Informasi Publik</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#agendakegiatan">Agenda Kegiatan</a></li>
-                            <li><a href="#galeri">Galeri</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto active" href="#lokasi">Lokasi</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-        </div>
-    </header><!-- End Header -->
+    <x-landingNav />
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
@@ -202,8 +155,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12" data-aos="fade-right" data-aos-delay="100" style="text-align: center;">
-                        <img src="{{ asset('assets2/img/strukturorganisasi.png') }}" class="img-fluid"
-                            alt="">
+                        <img src="{{ asset('assets2/img/strukturorganisasi.png') }}" class="img-fluid" alt="">
                     </div>
                 </div>
 
@@ -456,7 +408,7 @@
                     @endforeach
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a href="" class="mt-3 btn btn-primary m-auto">Lihat Agenda Lainnya</a>
+                    <a href="/agenda-show" class="mt-3 btn btn-primary m-auto">Lihat Agenda Lainnya</a>
                 </div>
         </section><!-- End Portfolio Details Section -->
 
@@ -480,14 +432,12 @@
                     @endforeach
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a href="" class="mx-auto btn btn-primary">Lihat Lebih Banyak Galeri</a>
+                    <a href="/galeri-show" class="mx-auto btn btn-primary">Lihat Lebih Banyak Galeri</a>
                 </div>
             </div>
         </section>
         <!-- End Portfolio Section -->
 </body>
-
-</html>
 
 <!-- ======= Contact Section ======= -->
 <section id="lokasi" class="contact">

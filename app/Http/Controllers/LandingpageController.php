@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\PerangkatDesa;
 use App\Models\AgendaKegiatan;
 use App\Models\Galeri;
+use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class LandingpageController extends Controller
 {
@@ -68,5 +69,16 @@ class LandingpageController extends Controller
     public function destroy(Landingpage $landingpage)
     {
         //
+    }
+
+    public function galeriShow()
+    {
+        $data['galeri'] = Galeri::all();
+        return view('landingpage.galeri_show.index', $data);
+    }
+    public function agendaShow()
+    {
+        $data['agenda'] = AgendaKegiatan::all();
+        return view('landingpage.agenda_show.index', $data);
     }
 }

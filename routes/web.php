@@ -45,3 +45,6 @@ Route::get('/pertanian/print-report', [PertanianController::class, 'printReport'
 Route::get('/perkebunan/print-report', [PerkebunanController::class, 'printReport'])->name('perkebunan.printReport');
 Route::get('/perikanan/print-report', [PerikananController::class, 'printReport'])->name('perikanan.printReport');
 Route::get('/meubel/print-report', [MeubelController::class, 'printReport'])->name('meubel.printReport');
+
+Route::get('/galeri-show', [LandingpageController::class, 'galeriShow'])->name('galeri.show');
+Route::get('/agenda-show', [LandingpageController::class, 'agendaShow'])->name('agenda.show');
