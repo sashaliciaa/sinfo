@@ -140,7 +140,7 @@
                             <label for="jabatan" class="form-label">Jabatan</label>
                             <select name="jabatan" id="jabatan" class="form-select">
                                 <option selected disabled>Pilih Jabatan</option>
-                                @foreach ($dataJabatan as $Jabatanitem)
+                                @foreach ($selectJabatan as $Jabatanitem)
                                     <option value="{{ $Jabatanitem->id }}">{{ $Jabatanitem->jabatan }}</option>
                                 @endforeach
                             </select>
@@ -155,8 +155,8 @@
                             <label for="status" class="form-label">Status</label>
                             <select name="status" id="status" class="form-select">
                                 <option selected disabled>Pilih Status</option>
-                                <option value="Aktif">Aktif</option>
-                                <option value="Tidak Aktif">Tidak Aktif</option>
+                                <option value="1">Aktif</option>
+                                <option value="2">Tidak Aktif</option>
                             </select>
                         </div>
 
@@ -211,7 +211,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="nama_akhir" class="form-label">Nama Akhir</label>
                                     <input type="text" class="form-control" id="nama_akhir" name="nama_akhir"
-                                        value="{{ $EditItem->nama_akhir }}" required>
+                                        required value="{{ $EditItem->nama_akhir }}">
                                 </div>
 
                                 <div class="col-md-6 mb-3">
@@ -250,7 +250,7 @@
                                         <option selected value="{{ $EditItem->jabatan_id }}">
                                             {{ $EditItem->jabatans->jabatan }}
                                         </option>
-                                        @foreach ($dataJabatan as $JabatanEditItem)
+                                        @foreach ($selectJabatan as $JabatanEditItem)
                                             <option value="{{ $JabatanEditItem->id }}">{{ $JabatanEditItem->jabatan }}
                                             </option>
                                         @endforeach
@@ -267,7 +267,11 @@
                                     <label for="status" class="form-label">Status</label>
                                     <select name="status" id="status" class="form-select">
                                         <option selected value="{{ $EditItem->status }}">
-                                            {{ $EditItem->status }}
+                                            @if ($EditItem->status == 1)
+                                                Aktif
+                                            @else
+                                                Tidak Aktif
+                                            @endif
                                         </option>
                                         <option value="1">Aktif</option>
                                         <option value="0">Tidak Aktif</option>

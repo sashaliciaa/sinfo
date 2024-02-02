@@ -1,6 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        /* Calendar container style */
+        #calendar {
+            /* max-width: 900px; */
+            margin: 0 auto;
+        }
+
+        /* Modal style */
+        .modal-header {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        /* Event style */
+        .fc-event {
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: 1px solid #3498db;
+        }
+
+        /* Hover effect on events */
+        .fc-event:hover {
+            background-color: #217dbb;
+            color: #fff;
+            border: 1px solid #217dbb;
+        }
+    </style>
+
+
+
     <h3 class="mt-4 text-center">Agenda Kegiatan Desa Sindangmekar</h3>
     <ol class="breadcrumb mb-4"></ol>
     @if ($message = Session::get('success'))

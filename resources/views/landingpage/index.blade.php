@@ -116,54 +116,6 @@
     </section><!-- End Hero -->
 
     <main id="main">
-
-        <!-- ======= Featured Services Section ======= -->
-        <!-- <section id="featured-services" class="featured-services">
-            <div class="container" data-aos="fade-up">
-
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4 class="title"><a href="">Layanan Masyarakat</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Potensi Desa</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                            <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section> --><!-- End Featured Services Section -->
-
-        <!-- ======= Tentang Kami Section ======= -->
         <section id="tentangkami" class="about section-bg">
             <div class="container" data-aos="fade-up">
 
@@ -173,8 +125,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets2/img/desa-sindangmekar.png') }}" class="img-fluid"
-                            alt="">
+                        <img src="{{ asset('assets2/img/desa-sindangmekar.png') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
@@ -223,17 +174,18 @@
                         data-aos="fade-up" data-aos-delay="100">
                         <h3>VISI</h3>
                         <P>
-                            Menjadi desa yang mandiri, sejahtera, dan berbudaya, diakui sebagai pusat pembangunan berkelanjutan di wilayah ini.
+                            Menjadi desa yang mandiri, sejahtera, dan berbudaya, diakui sebagai pusat pembangunan
+                            berkelanjutan di wilayah ini.
                         </P>
                         <h3>MISI</h3>
                         <P>
-1. Pembangunan Ekonomi<br>
-2. Kesejahteraan Masyarakat<br>
-3. Pemeliharaan Lingkungan<br>
-4. Partisipasi Masyarakat<br>
-5. Pengembangan Budaya dan Pariwisata<br>
-6. Infrastruktur dan Aksesibilitas<br>
-7. Keamanan dan Ketertiban
+                            1. Pembangunan Ekonomi<br>
+                            2. Kesejahteraan Masyarakat<br>
+                            3. Pemeliharaan Lingkungan<br>
+                            4. Partisipasi Masyarakat<br>
+                            5. Pengembangan Budaya dan Pariwisata<br>
+                            6. Infrastruktur dan Aksesibilitas<br>
+                            7. Keamanan dan Ketertiban
                         </P>
                     </div>
                 </div>
@@ -267,204 +219,21 @@
                 </div>
 
                 <div class="row">
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladesa.jpg') }}" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KEPALA DESA</h4>
-                                <h6>MUHAIMIN,S.Pd.I</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/sekretarisdesa.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>SEKRETARIS DESA</h4>
-                                <h6>SIHABUDIN</h6>
+                    @foreach ($perangkat as $itemPerangkat)
+                        <div class="col-lg-2 col-md-6 col-sm-4 d-flex align-items-stretch" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <div class="member text-center">
+                                <div class="member-img">
+                                    <img src="{{ asset('Foto_perangkat_desa/' . $itemPerangkat->foto) }}"
+                                        class="img-fluid" alt="">
+                                </div>
+                                <div class="member-info">
+                                    <h4>{{ $itemPerangkat->jabatans->jabatan }}</h4>
+                                    <h6>{{ $itemPerangkat->nama_awal }} {{ $itemPerangkat->nama_akhir }}</h6>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kaurtatausahaumum.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KAUR TATA USAHA & UMUM</h4>
-                                <h6>ARIS SUSANTO</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kaurkeuangan.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KAUR KEUANGAN</h4>
-                                <h6>SRI RAHAYU</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/staffkeuangan.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>STAF KEUANGAN</h4>
-                                <h6>WULAN WINDASARI</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kaurperencanaan.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KAUR PERENCANAAN</h4>
-                                <h6>ADI ROKADI</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kasipemerintahan.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KASI PEMERINTAHAN</h4>
-                                <h6>KARJONO</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kasikesejahteraan.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KASI KESEJAHTERAAN</h4>
-                                <h6>ABDUL HAMID</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kasipelayanan.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KASI PELAYANAN</h4>
-                                <h6>AHMAD ROFI'I</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladusun1.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KEPALA DUSUN I</h4>
-                                <h6>AJAT SUDRAJAT</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kosong.jpg') }}" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KEPALA DUSUN II</h4>
-                                <h6>-</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladusun3.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KEPALA DUSUN III</h4>
-                                <h6>NUR AFANDI</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/kepaladusun4.jpg') }}"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>KEPALA DUSUN IV</h4>
-                                <h6>SUJAYA</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                        data-aos-delay="100">
-                        <div class="member text-center">
-                            <div class="member-img">
-                                <img src="{{ asset('assets2/img/perangkatdesa/staffpemdes.jpg') }}" class="img-fluid"
-                                    alt="">
-                            </div>
-                            <div class="member-info">
-                                <h4>STAFF PEMDES</h4>
-                                <h6>RODIAH</h6>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    @endforeach
                 </div>
 
             </div>
@@ -631,45 +400,64 @@
                     <h3> <span>AGENDA KEGIATAN</span></h3>
                 </div>
 
-                <div class="row gy-4">
-
-                    <div class="col-lg-8">
-                        <div class="portfolio-details-slider swiper">
-                            <div class="swiper-wrapper align-items-center">
-
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('assets2/img/launchingbanksampah.jpg') }}" alt="">
+                <div class="row">
+                    @foreach ($agenda as $itemAgenda)
+                        <div class="col-sm-6 mb-3 col-lg-4 mb-sm-0">
+                            <div class="card">
+                                <div class="card-header">
+                                    <b>
+                                        <h5 class="p-0 m-0">
+                                            {{ $itemAgenda->nama_agenda }}
+                                        </h5>
+                                    </b>
                                 </div>
-
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('assets2/img/portfolio/portfolio-details-1.jpg') }}"
-                                        alt="">
+                                <div class="card-body">
+                                    {{-- <h5 class="card-title">{{ $itemAgenda->nama_agenda }}</h5> --}}
+                                    <p class="card-text">
+                                        {{ $itemAgenda->keterangan ? $itemAgenda->keterangan : 'Tidak Ada Keterangan' }}
+                                    </p>
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td>Tanggal</td>
+                                            <td>:</td>
+                                            <td>
+                                                @if ($itemAgenda->tgl_kegiatan_mulai == $itemAgenda->tgl_kegiatan_selesai)
+                                                    {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_mulai)->locale('id')->isoFormat('D MMMM Y') }}
+                                                @else
+                                                    {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_mulai)->locale('id')->isoFormat('D MMMM Y') }}
+                                                    s/d
+                                                    {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_selesai)->locale('id')->isoFormat('D MMMM Y') }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jam</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{ $itemAgenda->jam_mulai }} WIB s/d
+                                                @if ($itemAgenda->jam_selesai == '23:59:59')
+                                                    Selesai
+                                                @else
+                                                    {{ $itemAgenda->jam_selesai }} WIB
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tempat</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{ $itemAgenda->tempat }}
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
-
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('assets2/img/portfolio/portfolio-details-1.jpg') }}"
-                                        alt="">
-                                </div>
-
                             </div>
-                            <div class="swiper-pagination"></div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="portfolio-description">
-                            <h2>This is an example of portfolio detail</h2>
-                            <p>
-                                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi
-                                labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque
-                                itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur
-                                dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                            </p>
-                        </div>
-                        <a href="agenda.kegiatan.detail.php" class="btn btn-dark">Agenda Lainnya >></a>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
+                <div class="d-flex justify-content-center">
+                    <a href="" class="mt-3 btn btn-primary m-auto">Lihat Agenda Lainnya</a>
+                </div>
         </section><!-- End Portfolio Details Section -->
 
         <!-- ======= Portfolio Section ======= -->
@@ -681,46 +469,19 @@
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="assets2/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="{{ asset('assets2/img/launchingbanksampah.jpg') }}" class="img-fluid"
-                            alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="assets2/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="assets2/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="assets2/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="assets2/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="assets2/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="assets2/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="assets2/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                    </div>
-
+                    @foreach ($galeri as $itemGaleri)
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                            <div class="border rounded overflow-hidden">
+                                <img src="{{ asset('Foto_galeri/' . $itemGaleri->foto_galeri) }}" class="img-fluid"
+                                    alt="{{ $itemGaleri->nama_galeri }}">
+                                <h5 class="fw-bold my-2 mx-2">{{ $itemGaleri->nama_foto }}</h5>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-
+                <div class="d-flex justify-content-center">
+                    <a href="" class="mx-auto btn btn-primary">Lihat Lebih Banyak Galeri</a>
+                </div>
             </div>
         </section>
         <!-- End Portfolio Section -->
@@ -738,8 +499,8 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="col-lg-12 ">
-                <iframe class="mb-4 mb-lg-0"
+            <div class="col-lg-12">
+                <iframe class="mb-4 mb-lg-0 rounded"
                     src="https://maps.google.com/maps?q=sindangmekar&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
                     frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
             </div>

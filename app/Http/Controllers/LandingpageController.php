@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Landingpage;
 use Illuminate\Http\Request;
+use App\Models\PerangkatDesa;
+use App\Models\AgendaKegiatan;
+use App\Models\Galeri;
 
 class LandingpageController extends Controller
 {
@@ -12,7 +16,10 @@ class LandingpageController extends Controller
      */
     public function index()
     {
-        return view('landingpage.index');
+        $data['perangkat'] = User::where('jabatan_id', '!=', '1')->get();
+        $data['agenda'] = AgendaKegiatan::paginate(3);
+        $data['galeri'] = Galeri::paginate(10);
+        return view('landingpage.index', $data);
     }
 
     /**

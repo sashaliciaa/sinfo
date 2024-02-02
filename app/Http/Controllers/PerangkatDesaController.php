@@ -14,13 +14,20 @@ class PerangkatDesaController extends Controller
         $users = User::latest()
             ->where('jabatan_id', '!=', '1')
             ->get();
-        $dataJabatan = Jabatan::all();
-        return view('admin.perangkatdesa.index', compact('users', 'dataJabatan'));
+
+        $jabatanIds = $users->pluck('jabatan_id')->toArray();
+
+        $dataJabatan = Jabatan::where('id', '!=', '1')->get();
+        $selectJabatan = Jabatan::where('id', '!=', '1')
+            ->whereNotIn('id', $jabatanIds)
+            ->get();
+
+        return view('admin.perangkatdesa.index', compact('users', 'dataJabatan', 'selectJabatan'));
     }
 
     public function create()
     {
-        $jabatan = Jabatan::all();
+        $jabatan = Jabatan::where('id', '!=', '1')->get();
         return view('admin.perangkatdesa.create', compact('jabatan'));
     }
 
@@ -32,7 +39,6 @@ class PerangkatDesaController extends Controller
                 'email' => 'required|email|unique:users',
                 'username' => 'required',
                 'nama_awal' => 'required',
-                'nama_akhir' => 'required',
                 'password' => 'required|min:6',
                 'alamat' => 'required',
                 'telp' => 'required',
@@ -47,11 +53,17 @@ class PerangkatDesaController extends Controller
             $tujuan_upload = "Foto_perangkat_desa";
             $file->move($tujuan_upload, $nama_file);
 
+            if ($request->nama_akhir == null) {
+                $nama_akhir = " ";
+            } else {
+                $nama_akhir = $request->nama_akhir;
+            }
+
             User::create([
                 'email' => $request->email,
                 'username' => $request->username,
                 'nama_awal' => $request->nama_awal,
-                'nama_akhir' => $request->nama_akhir,
+                'nama_akhir' => $nama_akhir,
                 'password' => bcrypt($request->password),
                 'alamat' => $request->alamat,
                 'telp' => $request->telp,
@@ -80,7 +92,6 @@ class PerangkatDesaController extends Controller
                 'email' => 'required',
                 'username' => 'required',
                 'nama_awal' => 'required',
-                'nama_akhir' => 'required',
                 'password' => 'nullable|min:6',
                 'alamat' => 'required',
                 'telp' => 'required',
@@ -111,11 +122,17 @@ class PerangkatDesaController extends Controller
                 $user->foto = $nama_file;
             }
 
+            if ($request->nama_akhir == null) {
+                $nama_akhir = " ";
+            } else {
+                $nama_akhir = $request->nama_akhir;
+            }
+
             $user->update([
                 'email' => $validatedData['email'],
                 'username' => $validatedData['username'],
                 'nama_awal' => $validatedData['nama_awal'],
-                'nama_akhir' => $validatedData['nama_akhir'],
+                'nama_akhir' => $nama_akhir,
                 'password' => $request->has('password') ? bcrypt($validatedData['password']) : $user->password,
                 'alamat' => $validatedData['alamat'],
                 'telp' => $validatedData['telp'],
