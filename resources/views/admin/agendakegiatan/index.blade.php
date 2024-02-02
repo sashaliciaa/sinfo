@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label for="_mulai" class="form-label">Tanggal Kegiatan Mulai</label>
-                            <input type="date" class="form-control" id="_mulai_mulai" name="_mulai_mulai"
+                            <input type="date" class="form-control" id="tgl_kegiatan_mulai" name="tgl_kegiatan_mulai"
                                 placeholder="Masukkan Tanggal Kegiatan Mulai" autofocus required autocomplete="">
                         </div>
                         <div class="form-group">
@@ -105,7 +105,7 @@
                                 <td>Jam Selesai</td>
                                 <td>:</td>
                                 <td>
-                                    @if ($item->jam_selesai == null)
+                                    @if ($item->jam_selesai == '23:59:59')
                                         selesai
                                     @else
                                         {{ $item->jam_selesai }}
@@ -150,8 +150,6 @@
                 windowResizeDelay: 200,
                 height: 700,
                 selectable: true,
-                editable: true,
-                selectMirror: true,
                 themeSystem: 'bootstrap',
                 locale: 'id',
                 customButtons: {
@@ -171,11 +169,10 @@
                     @foreach ($agenda as $item)
                         {
                             title: '{{ $item->nama_agenda }}',
-                            start: '{{ $item->_mulai }}',
+                            start: '{{ $item->tgl_kegiatan_mulai }}T{{ $item->jam_mulai }}',
+                            end: '{{ $item->tgl_kegiatan_selesai }}T{{ $item->jam_selesai }}',
                             extendedProps: {
                                 id: '{{ $item->id }}',
-                                jam_mulai: '{{ $item->jam_mulai }}',
-                                jam_selesai: '{{ $item->jam_selesai }}',
                                 tempat: '{{ $item->tempat }}',
                                 description: '{{ $item->keterangan }}',
                             }

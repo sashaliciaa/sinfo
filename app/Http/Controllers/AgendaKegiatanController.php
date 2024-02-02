@@ -38,7 +38,15 @@ class AgendaKegiatanController extends Controller
             "tempat" => "required",
         ]);
 
+        $jam_selesai = $request->jam_selesai;
+
+        if ($jam_selesai == null) {
+            $jam_selesai = '23:59:59';
+        }
+
         $data = $request->all();
+
+        $data['jam_selesai'] = $jam_selesai;
 
         $agendaKegiatan->create($data);
 
