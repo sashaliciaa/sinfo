@@ -380,7 +380,6 @@
         </section>
         <!-- End Meubel -->
 
-        <!-- ======= Portfolio Details Section ======= -->
         <section id="agendakegiatan" class="portfolio-details">
             <div class="container">
 
@@ -388,54 +387,64 @@
                     <h3> <span>AGENDA KEGIATAN</span></h3>
                 </div>
 
-                <div class="row gy-4">
-
-                    <div class="col-lg-8">
-                        <div class="portfolio-details-slider swiper">
-                            <div class="swiper-wrapper align-items-center">
-
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('assets2/img/launchingbanksampah.jpg') }}" alt="">
+                <div class="row">
+                    @foreach ($agenda as $itemAgenda)
+                        <div class="col-sm-6 mb-lg-3 col-lg-4 mb-sm-0">
+                            <div class="card">
+                                <div class="card-header">
+                                    <b>
+                                        <h5 class="p-0 m-0">
+                                            {{ $itemAgenda->nama_agenda }}
+                                        </h5>
+                                    </b>
                                 </div>
-
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('assets2/img/portfolio/portfolio-details-1.jpg') }}"
-                                        alt="">
+                                <div class="card-body">
+                                    {{-- <h5 class="card-title">{{ $itemAgenda->nama_agenda }}</h5> --}}
+                                    <p class="card-text">
+                                        {{ $itemAgenda->keterangan ? $itemAgenda->keterangan : 'Tidak Ada Keterangan' }}
+                                    </p>
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td>Tanggal</td>
+                                            <td>:</td>
+                                            <td>
+                                                @if ($itemAgenda->tgl_kegiatan_mulai == $itemAgenda->tgl_kegiatan_selesai)
+                                                    {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_mulai)->locale('id')->isoFormat('D MMMM Y') }}
+                                                @else
+                                                    {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_mulai)->locale('id')->isoFormat('D MMMM Y') }}
+                                                    s/d
+                                                    {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_selesai)->locale('id')->isoFormat('D MMMM Y') }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jam</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{ $itemAgenda->jam_mulai }} WIB s/d
+                                                @if ($itemAgenda->jam_selesai == '23:59:59')
+                                                    Selesai
+                                                @else
+                                                    {{ $itemAgenda->jam_selesai }} WIB
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tempat</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{ $itemAgenda->tempat }}
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
-
-                                <div class="swiper-slide">
-                                    <img src="{{ asset('assets2/img/portfolio/portfolio-details-1.jpg') }}"
-                                        alt="">
-                                </div>
-
                             </div>
-                            <div class="swiper-pagination"></div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="portfolio-description">
-                            <h2>LAUNCHING BANK SAMPAH</h2>
-                            <p style="text-align: justify;">
-                                Launching Bank Sampah di Desa Sindangmekar menjadi sebuah acara yang sangat dinantikan
-                                dan penuh antusiasme. Dengan suasana yang penuh semangat, warga desa berkumpul untuk
-                                merayakan dimulainya program ini. Acara dimulai dengan sambutan dari kepala desa dan
-                                perwakilan dari instansi terkait, yang menjelaskan tujuan dan manfaat dari pendirian
-                                Bank Sampah tersebut. Setelah itu, dilakukan pemotongan pita secara simbolis untuk
-                                menandai pembukaan resmi Bank Sampah. Warga juga diberikan pemahaman mengenai cara
-                                pengelolaan sampah yang benar, manfaat daur ulang, dan insentif yang dapat diperoleh
-                                melalui partisipasi aktif dalam program ini. Selain itu, kegiatan launching ini disertai
-                                dengan demonstrasi praktik pengelolaan sampah dan pengenalan jenis sampah yang dapat
-                                diolah melalui Bank Sampah. Semangat gotong-royong dan kesadaran lingkungan tercermin
-                                dari partisipasi aktif warga, menciptakan momentum positif untuk keberhasilan program
-                                Bank Sampah di Desa Sindangmekar.
-                            </p>
-                        </div>
-                        <a href="agenda.kegiatan.detail.php" class="btn btn-dark">Agenda Lainnya <i
-                                class = "bx bx-chevron-right"></i></a>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
+                <div class="d-flex justify-content-center">
+                    <a href="/agenda-show" class="btn btn-primary">Lihat Lebih Banyak</a>
+                </div>
         </section><!-- End Portfolio Details Section -->
 
         <!-- ======= Portfolio Section ======= -->
@@ -457,37 +466,9 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="/galeri-show" class="mx-auto btn btn-primary">Lihat Lebih Banyak Galeri</a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="{{ asset('assets2/img/kegiatandesa/banksampah3.jpg') }}" class="img-fluid"
-                        alt="">
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="{{ asset('assets2/img/kegiatandesa/banksampah3.jpg') }}" class="img-fluid"
-                        alt="">
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="{{ asset('assets2/img/kegiatandesa/banksampah2.jpg') }}" class="img-fluid"
-                        alt="">
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="{{ asset('assets2/img/kegiatandesa/rakordes.jpg') }}" class="img-fluid"
-                        alt="">
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="{{ asset('assets2/img/kegiatandesa/musrenbangdes.jpg') }}" class="img-fluid"
-                        alt="">
-                </div>
-
             </div>
-
+            <div class="d-flex justify-content-center">
+                <a href="/galeri-show" class="btn btn-primary">Lihat Lebih Banyak</a>
             </div>
         </section>
         <!-- End Portfolio Section -->
@@ -509,7 +490,6 @@
                     frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
             </div>
         </div>
-
     </div>
 </section><!-- End Contact Section -->
 
@@ -517,62 +497,7 @@
 
 </main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
-
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h3><span>Profil</span></h3>
-                    <p>
-                        Sindangmekar adalah desa di kecamatan
-                        Dukupuntang, Cirebon, Jawa Barat, Indonesia.<br>
-                    </p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h3><span>Tautan</span></h3>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h3><span>Our Services</span></h3>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h3><span>Kontak Kami</span></h3>
-                    <strong>Email:</strong>desasindangmekar57@gmail.com<br>
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="container py-4">
-        <div class="copyright">
-            &copy; Copyright <strong><span>Sindangmekar</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Sindangmekar-bootstrap-business-template/ -->
-            Designed by <a href="#">SiPalingRandom</a>
-        </div>
-    </div>
-</footer><!-- End Footer -->
+<x-landingfoot />
 
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

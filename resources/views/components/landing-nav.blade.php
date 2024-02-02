@@ -2,10 +2,12 @@
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-md-between">
 
-            <h1 class="logo"><a href="index.html"><a href="index.html" class="logo"><img
-                            src="{{ asset('assets2/img/desa-sindangmekar.png') }}" alt=""></a> Sindangmekar</a>
+            <h1 class="logo">
+                <a href="/">
+                    <img src="{{ asset('assets2/img/desa-sindangmekar.png') }}" alt="">
+                    Sindangmekar
+                </a>
             </h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -36,7 +38,7 @@
                     <li class="dropdown"><a href="#"><span>Informasi Publik</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="agenda-show">Agenda Kegiatan</a></li>
+                            <li><a href="/agenda-show">Agenda Kegiatan</a></li>
                             <li><a href="/galeri-show">Galeri</a></li>
                         </ul>
                     </li>
