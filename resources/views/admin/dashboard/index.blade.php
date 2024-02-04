@@ -17,27 +17,17 @@
         </div>
         <div class="col-xl col-md">
             <div class="card mb-4" style="border-left: 10px solid #007bff;">
-                {{-- <div class="card-header"></div> --}}
                 <div class="card-body">Pertanian
                     <h3>{{ $pertanians->count() }}</h3>
                 </div>
-                {{-- <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white w-100 d-flex justify-content-between align-items-center"
-                        href="/pekerjaan_desa/peternakan">Lihat Detail <i class="fas fa-angle-right"></i></a>
-                </div> --}}
             </div>
         </div>
         <div class="col-xl col-md">
             <div class="card mb-4" style="border-left: 10px solid #007bff;">
-                {{-- <div class="card-header"></div> --}}
                 <div class="card-body">
                     <small>Peternakan</small>
                     <h3>{{ $peternakans->count() }}</h3>
                 </div>
-                {{-- <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-dark w-100 d-flex justify-content-between align-items-center"
-                        href="/potensi_desa/peternakan">Lihat Detail <i class="fas fa-angle-right"></i></a>
-                </div> --}}
             </div>
         </div>
         <div class="col-xl col-md">
@@ -94,7 +84,12 @@
                     Profil Desa
                 </div>
                 <div class="card-body">
-                    <p>Provide a brief description or information about the village here.</p>
+                    <p style="text-align:justify">
+                        Desa Sindangmekar, terletak di Kecamatan Dukupuntang, Kabupaten Cirebon, Jawa Barat, dikenal
+                        sebagai desa yang subur dengan luas wilayah 171,6600 Ha. Mayoritas penduduknya adalah petani
+                        dengan lahan pertanian sekitar 100 Ha. Berperan sebagai desa penyangga ibu kota Kabupaten,
+                        Sindangmekar memainkan peran penting dalam perkembangan daerah tersebut.
+                    </p>
                 </div>
             </div>
 
@@ -105,10 +100,19 @@
                 </div>
                 <div class="card-body">
                     <h5>Visi:</h5>
-                    <p>Describe the vision of the village.</p>
+                    <p style="text-align:justify">Menjadi desa yang mandiri, sejahtera, dan berbudaya, diakui sebagai pusat
+                        pembangunan berkelanjutan di wilayah ini.</p>
 
                     <h5>Misi:</h5>
-                    <p>Outline the mission of the village.</p>
+                    <P style="text-align:justify">
+                        1. Pembangunan Ekonomi<br>
+                        2. Kesejahteraan Masyarakat<br>
+                        3. Pemeliharaan Lingkungan<br>
+                        4. Partisipasi Masyarakat<br>
+                        5. Pengembangan Budaya dan Pariwisata<br>
+                        6. Infrastruktur dan Aksesibilitas<br>
+                        7. Keamanan dan Ketertiban
+                    </P>
                 </div>
             </div>
         </div>

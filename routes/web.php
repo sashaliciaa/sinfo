@@ -48,3 +48,8 @@ Route::get('/meubel/print-report', [MeubelController::class, 'printReport'])->na
 
 Route::get('/galeri-show', [LandingpageController::class, 'galeriShow'])->name('galeri.show');
 Route::get('/agenda-show', [LandingpageController::class, 'agendaShow'])->name('agenda.show');
+Route::get('/pertanian-show', [LandingpageController::class, 'pertanianShow'])->name('pertanian.show');
+Route::get('/perkebunan-show', [LandingpageController::class, 'perkebunanShow'])->name('perkebunan.show');
+Route::get('/peternakan-show', [LandingpageController::class, 'peternakanShow'])->name('peternakan.show');
+Route::get('/perikanan-show', [LandingpageController::class, 'perikananShow'])->name('perikanan.show');
+Route::get('/meubel-show', [LandingpageController::class, 'meubelShow'])->name('meubel.show');

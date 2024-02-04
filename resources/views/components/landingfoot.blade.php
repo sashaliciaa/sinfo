@@ -16,36 +16,37 @@
                             <div class="col-5 footer-links">
                                 <h3><span>Profile Desa</span></h3>
                                 <ul>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#tentangkami">Tentang Kami</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#visimisi">Visi & Misi</a></li>
                                 </ul>
                             </div>
 
                             <div class="col-5 footer-links">
                                 <h3><span>Pemerintahan</span></h3>
                                 <ul>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#strukturorganisasi">Struktur
+                                            Organisasi</a>
+                                    </li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#perangkatdesa">Perangkat Desa</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-5 footer-links">
                                 <h3><span>Potensi Desa</span></h3>
                                 <ul>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a>
-                                    </li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#pertanian">Pertanian</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#perkebunan">Perkebunan</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#peternakan">Peternakan</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#perikanan">Perikanan</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#meubel">Meubel</a></li>
                                 </ul>
                             </div>
                             <div class="col-5 footer-links">
-                                <h3><span>Informasi Public</span></h3>
+                                <h3><span>Informasi Publik</span></h3>
                                 <ul>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="/agenda-show">Agenda Kegiatan</a>
+                                    </li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="/galeri-show">Galeri</a></li>
                                     </li>
                                 </ul>
                             </div>

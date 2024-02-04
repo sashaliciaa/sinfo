@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Galeri;
+use App\Models\Meubel;
+use App\Models\Perikanan;
+use App\Models\Pertanian;
+use App\Models\Perkebunan;
+use App\Models\Peternakan;
 use App\Models\Landingpage;
 use Illuminate\Http\Request;
 use App\Models\PerangkatDesa;
 use App\Models\AgendaKegiatan;
-use App\Models\Galeri;
+use App\Http\Controllers\Controller;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class LandingpageController extends Controller
@@ -80,5 +86,30 @@ class LandingpageController extends Controller
     {
         $data['agenda'] = AgendaKegiatan::all();
         return view('landingpage.agenda_show.index', $data);
+    }
+    public function pertanianShow()
+    {
+        $data['pertanian'] = Pertanian::all();
+        return view('landingpage.pertanian_show.index', $data);
+    }
+    public function perkebunanShow()
+    {
+        $data['perkebunan'] = Perkebunan::all();
+        return view('landingpage.perkebunan_show.index', $data);
+    }
+    public function peternakanShow()
+    {
+        $data['peternakan'] = Peternakan::all();
+        return view('landingpage.peternakan_show.index', $data);
+    }
+    public function perikananShow()
+    {
+        $data['perikanan'] = Perikanan::all();
+        return view('landingpage.perikanan_show.index', $data);
+    }
+    public function meubelShow()
+    {
+        $data['meubel'] = Meubel::all();
+        return view('landingpage.meubel_show.index', $data);
     }
 }

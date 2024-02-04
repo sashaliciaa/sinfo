@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Sindangmekar</title>
+    <title>{{ env('APP_NAME') }} </title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -78,32 +78,24 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets2/img/desa-sindangmekar.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets2/img/desa-sindangmekar.png') }}" class="img-fluid"
+                            style="max-width: 80%;" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
                         <p>
-                            Desa Sindangmekar berada diwilayah Kecamatan Dukupuntang Kabupaten Cirebon Provinsi Jawa
-                            Barat diketinggian 105 meter dari permukaan laut dengan luas wilayah 1716600, Ha. terbagi
-                            kedalam 8 (Delapan) Rukun Warga (RW) dan 28 (Duapuluh Delapan) Rukun Tetangga (RT)
-                            masyarakatnya sebagian besar petani yang mengandalkan lahan pertanian 100 Ha, dari luas
-                            wilayah desa Sindangmekar 171,6600 Ha. + 4 (empat) km sebelah Barat ibu kota Kabupaten
-                            Cirebon, + 4 (empat) km sebelah Timur ibu kota Kecamatan Dukupuntang dengan jumlah penduduk
-                            2471 KK, 6648 jiwa terdiri dari laki-laki 3434 jiwa dan perempuan 3214 jiwa dan yang
-                            mempunyai hak pilih 3.957 jiwa terdiri dari laki-laki 2299 jiwa dan perempuan 2901 jiwa
-                            mempunyai peranan penting dalam perkembangan Kabupaten Cirebon karena desa Sindangmekar desa
-                            penyangga ibu kota Kabupaten yang menjadi barometer kemajuan di Kabupaten Cirebon bagian
-                            barat.
+
+                            Desa Sindangmekar, terletak di Kecamatan Dukupuntang, Kabupaten Cirebon, Jawa Barat, dikenal
+                            sebagai desa yang subur dengan luas wilayah 171,6600 Ha. Mayoritas penduduknya adalah petani
+                            dengan lahan pertanian sekitar 100 Ha. Berperan sebagai desa penyangga ibu kota Kabupaten,
+                            Sindangmekar memainkan peran penting dalam perkembangan daerah tersebut.
                             <br>
                             <br>
-                            Desa Sindangmekar menghampar dari timur ke barat yang membentang jalan Nyi Ageng Serang,
-                            jalan provinsi sepanjang 2.500 m yang menghubungkan Kabupaten Cirebon dengan Kabupaten
-                            Majalengka dan utara ke selatan jalan Pangeran Panjunan jalan Kabupaten sepanjang 800 m yang
-                            menghubungankan Kabupaten Cirebon dan Kabupaten Kuningan dan dibelah Sungai Cisoka sepanjang
-                            3.000 m yang mengalir dari gunung Ciremai ke arah utara yang ditumbuhi dengan aneka ragam
-                            pepohonan yang hijau, percikan air mengalir disana-sini, dihiasi kuningnya sawah menghampar
-                            menghiasi bumi Sindangmekar yang asri sebagai bukti bahwa desa Sindangmekar adalah Desa yang
-                            subur.
+                            Dilintasi oleh jalan provinsi Nyi Ageng Serang dan jalan Pangeran Panjunan, desa ini
+                            menghubungkan Kabupaten Cirebon dengan Majalengka dan Kuningan. Dengan Sungai Cisoka yang
+                            membelahnya, Desa Sindangmekar menawarkan keindahan alam dengan pepohonan hijau, sungai yang
+                            mengalir, dan sawah kuning, menciptakan suasana yang asri dan subur.
+                            <br>
                         </p>
                     </div>
                 </div>
@@ -172,22 +164,91 @@
 
                 <div class="row">
                     @foreach ($perangkat as $itemPerangkat)
-                        <div class="col-lg-2 col-md-6 col-sm-4 d-flex align-items-stretch" data-aos="fade-up"
-                            data-aos-delay="100">
-                            <div class="member text-center">
-                                <div class="member-img">
-                                    <img src="{{ asset('Foto_perangkat_desa/' . $itemPerangkat->foto) }}"
-                                        class="img-fluid" alt="">
-                                </div>
-                                <div class="member-info">
-                                    <h4>{{ $itemPerangkat->jabatans->jabatan }}</h4>
-                                    <h6>{{ $itemPerangkat->nama_awal }} {{ $itemPerangkat->nama_akhir }}</h6>
+                        @if ($itemPerangkat->status == 1)
+                            <div class="col-lg-2 col-md-6 col-sm-4 d-flex align-items-stretch" data-aos="fade-up"
+                                data-aos-delay="100">
+                                <div class="member text-center">
+                                    <div class="member-img">
+                                        <img src="{{ asset('Foto_perangkat_desa/' . $itemPerangkat->foto) }}"
+                                            class="img-fluid" alt="">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>{{ $itemPerangkat->jabatans->jabatan }}</h4>
+                                        <h6>{{ $itemPerangkat->nama_awal }} {{ $itemPerangkat->nama_akhir }}</h6>
+                                        <!-- Improved "Lihat Detail" button -->
+                                        <button type="button" class="btn btn-info mt-3" data-toggle="modal"
+                                            data-target="#modal{{ $itemPerangkat->id }}">
+                                            Lihat Detail
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal{{ $itemPerangkat->id }}" tabindex="-1"
+                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                {{ $itemPerangkat->jabatans->jabatan }}
+                                            </h5>
+                                            <button type="button" class="btn-close" data-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="{{ asset('Foto_perangkat_desa/' . $itemPerangkat->foto) }}"
+                                                class="img-fluid mb-3" style="max-width: 150px; max-height: 150px;"
+                                                alt="Perangkat Image">
+
+                                            <table class="table">
+                                                <tr>
+                                                    <td><strong>Nama</strong></td>
+                                                    <td>:</td>
+                                                    <td>{{ $itemPerangkat->nama_awal }}
+                                                        {{ $itemPerangkat->nama_akhir }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Alamat</strong></td>
+                                                    <td>:</td>
+                                                    <td>{{ $itemPerangkat->alamat }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Email</strong></td>
+                                                    <td>:</td>
+                                                    <td>{{ $itemPerangkat->email }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>No. Telepon</strong></td>
+                                                    <td>:</td>
+                                                    <td>{{ $itemPerangkat->telp }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Jabatan</strong></td>
+                                                    <td>:</td>
+                                                    <td>{{ $itemPerangkat->jabatans->jabatan }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Tanggal Mulai Jabatan</strong></td>
+                                                    <td>:</td>
+                                                    <td>{{ $itemPerangkat->tgl_mulai_jabat }}</td>
+                                                </tr>
+                                            </table>
+                                            <br>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     @endforeach
                 </div>
-
             </div>
         </section><!-- End Team Section -->
 
@@ -218,8 +279,9 @@
                         2. Asem jaya<br>
                         3. Bungur jaya<br><br>
                         <div class col-lg-3>
-                            <a href="#" class="btn btn-dark">Data Pertanian <i
-                                    class = "bx bx-chevron-right"></i></a>
+                            <a href="/pertanian-show" class="btn btn-dark">
+                                Data Pertanian <i class="bi bi-chevron-compact-right"></i>
+                            </a>
                         </div>
                         </P>
                     </div>
@@ -257,8 +319,9 @@
                             perkembangan ekonomi desa.
                         </P>
                         <div class col-lg-3>
-                            <a href="#" class="btn btn-dark">Data Perkebunan <i
-                                    class = "bx bx-chevron-right"></i></a>
+                            <a href="/perkebunan-show" class="btn btn-dark">
+                                Data Perkebunan <i class="bi bi-chevron-compact-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -294,8 +357,9 @@
                             pembangunan ekonomi desa.
                         </P>
                         <div class col-lg-3>
-                            <a href="#" class="btn btn-dark">Data Peternakan <i
-                                    class = "bx bx-chevron-right"></i></a>
+                            <a href="/peternakan-show" class="btn btn-dark">
+                                Data Peternakan <i class="bi bi-chevron-compact-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -333,8 +397,9 @@
                             kelestarian sektor perikanan desa.
                         </P>
                         <div class col-lg-3>
-                            <a href="#" class="btn btn-dark">Data Perikanan <i
-                                    class = "bx bx-chevron-right"></i></a>
+                            <a href="/perikanan-show" class="btn btn-dark">
+                                Data Perikanan <i class="bi bi-chevron-compact-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -371,8 +436,9 @@
                             ekonomi lokal.
                         </P>
                         <div class col-lg-3>
-                            <a href="#" class="btn btn-dark">Data Meubel <i
-                                    class = "bx bx-chevron-right"></i></a>
+                            <a href="/meubel-show" class="btn btn-dark">
+                                Data Meubel <i class="bi bi-chevron-compact-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -380,26 +446,31 @@
         </section>
         <!-- End Meubel -->
 
+        {{-- Agenda Kegiatan Section --}}
         <section id="agendakegiatan" class="portfolio-details">
             <div class="container">
 
                 <div class="section-title">
-                    <h3> <span>AGENDA KEGIATAN</span></h3>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3> <span>AGENDA KEGIATAN</span></h3>
+                        <a href="/agenda-show" class="btn btn-dark">
+                            Lihat lebih banyak <i class="bi bi-chevron-compact-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="row">
                     @foreach ($agenda as $itemAgenda)
                         <div class="col-sm-6 mb-lg-3 col-lg-4 mb-sm-0">
-                            <div class="card">
-                                <div class="card-header">
+                            <div class="card d-flex flex-column h-100 shadow-sm">
+                                <div class="card-header d-flex flex-column h-100 bg-secondary text-white">
                                     <b>
                                         <h5 class="p-0 m-0">
                                             {{ $itemAgenda->nama_agenda }}
                                         </h5>
                                     </b>
                                 </div>
-                                <div class="card-body">
-                                    {{-- <h5 class="card-title">{{ $itemAgenda->nama_agenda }}</h5> --}}
+                                <div class="card-body flex-fill">
                                     <p class="card-text">
                                         {{ $itemAgenda->keterangan ? $itemAgenda->keterangan : 'Tidak Ada Keterangan' }}
                                     </p>
@@ -442,55 +513,67 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="/agenda-show" class="btn btn-primary">Lihat Lebih Banyak</a>
-                </div>
-        </section><!-- End Portfolio Details Section -->
+            </div>
+        </section>
 
-        <!-- ======= Portfolio Section ======= -->
+
+        <!-- ======= Galeri Section ======= -->
         <section id="galeri" class="portfolio">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h3> <span>GALERI DESA</span></h3>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3> <span>GALERI DESA</span></h3>
+                        <a href="/galeri-show" class="btn btn-dark">
+                            Lihat lebih banyak<i class="bi bi-chevron-compact-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    @php
+                        $count = 0;
+                    @endphp
                     @foreach ($galeri as $itemGaleri)
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="border rounded overflow-hidden">
-                                <img src="{{ asset('Foto_galeri/' . $itemGaleri->foto_galeri) }}" class="img-fluid"
-                                    alt="{{ $itemGaleri->nama_galeri }}">
-                                <h5 class="fw-bold my-2 mx-2">{{ $itemGaleri->nama_foto }}</h5>
+                        @if ($count < 10)
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                <div class="border rounded overflow-hidden">
+                                    <img src="{{ asset('Foto_galeri/' . $itemGaleri->foto_galeri) }}"
+                                        class="img-fluid" alt="{{ $itemGaleri->nama_galeri }}">
+                                    <h5 class="fw-bold my-2 mx-2">{{ $itemGaleri->nama_foto }}</h5>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                            @php
+                                $count++;
+                            @endphp
+                        @else
+                        @break
+                    @endif
+                @endforeach
             </div>
-            <div class="d-flex justify-content-center">
-                <a href="/galeri-show" class="btn btn-primary">Lihat Lebih Banyak</a>
-            </div>
-        </section>
-        <!-- End Portfolio Section -->
+        </div>
+    </section>
+    <!-- End Galeri Section -->
+
 </body>
 
 <!-- ======= Contact Section ======= -->
 <section id="lokasi" class="contact">
-    <div class="container" data-aos="fade-up">
+<div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-            <h3><span>LOKASI</span></h3>
-        </div>
+    <div class="section-title">
+        <h3><span>LOKASI</span></h3>
+    </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="col-lg-12">
-                <iframe class="mb-4 mb-lg-0 rounded"
-                    src="https://maps.google.com/maps?q=sindangmekar&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-                    frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-            </div>
+        <div class="col-lg-12">
+            <iframe class="mb-4 mb-lg-0 rounded"
+                src="https://maps.google.com/maps?q=sindangmekar&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
         </div>
     </div>
+</div>
 </section><!-- End Contact Section -->
 
 
@@ -501,7 +584,7 @@
 
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+    class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets2/vendor/purecounter/purecounter_vanilla.js') }}"></script>
@@ -513,7 +596,11 @@
 <script src="{{ asset('assets2/vendor/waypoints/noframework.waypoints.js') }}"></script>
 <script src="{{ asset('assets2/vendor/php-email-form/validate.js') }}"></script>
 
+
 <!-- Template Main JS File -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <script src="{{ asset('assets2/js/main.js') }}"></script>
 
 </body>

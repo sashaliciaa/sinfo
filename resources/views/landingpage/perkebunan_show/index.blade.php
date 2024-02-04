@@ -52,70 +52,52 @@
     <!-- ======= Header ======= -->
     <x-landingNav />
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="agendakegiatan" class="portfolio-details">
+    <!-- ======= Perkebunan Section ======= -->
+    <section id="perkebunan" class="portfolio-details">
         <div class="container">
 
             <div class="section-title">
-                <h3> <span>AGENDA KEGIATAN</span></h3>
+                <h3> <span>DATA PERKEBUNAN</span></h3>
             </div>
 
             <div class="row">
-                @foreach ($agenda as $itemAgenda)
+                @foreach ($perkebunan as $itemPerkebunan)
                     <div class="col-sm-6 mb-lg-3 col-lg-4 mb-sm-0">
-                        <div class="card d-flex flex-column h-100 shadow-sm">
-                            <div class="card-header d-flex flex-column h-100">
-                                <b>
-                                    <h5 class="p-0 m-0">
-                                        {{ $itemAgenda->nama_agenda }}
-                                    </h5>
-                                </b>
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-header bg-light border-bottom">
+                                <h5 class="p-0 m-0 text-dark">
+                                    Jenis Tanaman: {{ $itemPerkebunan->jenis_tanaman }}
+                                </h5>
                             </div>
-                            <div class="card-body flex-fill">
-                                {{-- <h5 class="card-title">{{ $itemAgenda->nama_agenda }}</h5> --}}
-                                <p class="card-text">
-                                    {{ $itemAgenda->keterangan ? $itemAgenda->keterangan : 'Tidak Ada Keterangan' }}
-                                </p>
-                                <table class="table table-borderless">
+                            <div class="card-body">
+                                <p class="card-text text-muted">
+                                <table class="table">
                                     <tr>
-                                        <td>Tanggal</td>
+                                        <td><strong>Waktu Tanam</strong></td>
                                         <td>:</td>
-                                        <td>
-                                            @if ($itemAgenda->tgl_kegiatan_mulai == $itemAgenda->tgl_kegiatan_selesai)
-                                                {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_mulai)->locale('id')->isoFormat('D MMMM Y') }}
-                                            @else
-                                                {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_mulai)->locale('id')->isoFormat('D MMMM Y') }}
-                                                s/d
-                                                {{ \Carbon\Carbon::parse($itemAgenda->tgl_kegiatan_selesai)->locale('id')->isoFormat('D MMMM Y') }}
-                                            @endif
-                                        </td>
+                                        <td>{{ $itemPerkebunan->waktu_tanam }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Jam</td>
+                                        <td><strong>Waktu Panen</strong></td>
                                         <td>:</td>
-                                        <td>
-                                            {{ $itemAgenda->jam_mulai }} WIB s/d
-                                            @if ($itemAgenda->jam_selesai == '23:59:59')
-                                                Selesai
-                                            @else
-                                                {{ $itemAgenda->jam_selesai }} WIB
-                                            @endif
-                                        </td>
+                                        <td>{{ $itemPerkebunan->waktu_panen }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Tempat</td>
+                                        <td><strong>Luas Wilayah Tanam</strong></td>
                                         <td>:</td>
-                                        <td>
-                                            {{ $itemAgenda->tempat }}
-                                        </td>
+                                        <td>{{ $itemPerkebunan->luas_wilayah_tanam }} m<sup>2</sup></td>
                                     </tr>
                                 </table>
+                                </p>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-    </section><!-- End Portfolio Details Section -->
+        </div>
+    </section><!-- End Perkebunan Section -->
+
+
 </body>
 </main><!-- End #main -->
 <x-landingfoot />
