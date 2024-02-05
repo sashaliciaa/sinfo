@@ -211,7 +211,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="nama_akhir" class="form-label">Nama Akhir</label>
                                     <input type="text" class="form-control" id="nama_akhir" name="nama_akhir"
-                                        required value="{{ $EditItem->nama_akhir }}">
+                                        value="{{ $EditItem->nama_akhir }}">
                                 </div>
 
                                 <div class="col-md-6 mb-3">

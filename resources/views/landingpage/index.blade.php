@@ -288,11 +288,71 @@
                         2. Asem jaya<br>
                         3. Bungur jaya<br><br>
                         <div class col-lg-3>
-                            <a href="/pertanian-show" class="btn btn-dark">
+                            {{-- <a href="/pertanian-show" class="btn btn-dark">
                                 Data Pertanian <i class="bi bi-chevron-compact-right"></i>
-                            </a>
+                            </a> --}}
+                            <button class="btn btn-dark" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalPertanian">Lihat Data
+                                Pertanian <i class="bi bi-chevron-compact-right"></i>
+                            </button>
+
+                            <div class="modal fade" id="modalPertanian" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="max-height: 40px">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Pertanian
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                @foreach ($pertanian as $itemPertanian)
+                                                    <div class="col-sm-6 mb-lg-3 col-lg-6 mb-sm-0">
+                                                        <div class="card h-100 shadow-sm">
+                                                            <div class="card-header bg-light border-bottom">
+                                                                <h5 class="p-0 m-0 text-dark">
+                                                                    Jenis Tanaman: {{ $itemPertanian->jenis_tanaman }}
+                                                                </h5>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p class="card-text text-muted">
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <td><strong>Waktu Tanam</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPertanian->waktu_tanam }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Waktu Panen</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPertanian->waktu_panen }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Luas Wilayah Tanam</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPertanian->luas_wilayah_tanam }}
+                                                                            m<sup>2</sup></td>
+                                                                    </tr>
+                                                                </table>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        </P>
+
                     </div>
                 </div>
 
@@ -328,10 +388,68 @@
                             perkembangan ekonomi desa.
                         </P>
                         <div class col-lg-3>
-                            <a href="/perkebunan-show" class="btn btn-dark">
-                                Data Perkebunan <i class="bi bi-chevron-compact-right"></i>
-                            </a>
+                            <button class="btn btn-dark" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalPerkebunan">Lihat Data
+                                Perkebunan <i class="bi bi-chevron-compact-right"></i>
+                            </button>
+
+                            <div class="modal fade" id="modalPerkebunan" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="max-height: 40px">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Perkebunan
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                @foreach ($perkebunan as $itemPerkebunan)
+                                                    <div class="col-sm-6 mb-lg-3 col-lg-6 mb-sm-0">
+                                                        <div class="card h-100 shadow-sm">
+                                                            <div class="card-header bg-light border-bottom">
+                                                                <h5 class="p-0 m-0 text-dark">
+                                                                    Jenis Tanaman: {{ $itemPerkebunan->jenis_tanaman }}
+                                                                </h5>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p class="card-text text-muted">
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <td><strong>Waktu Tanam</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPerkebunan->waktu_tanam }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Waktu Panen</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPerkebunan->waktu_panen }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Luas Wilayah Tanam</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPerkebunan->luas_wilayah_tanam }}
+                                                                            m<sup>2</sup></td>
+                                                                    </tr>
+                                                                </table>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
 
@@ -366,9 +484,76 @@
                             pembangunan ekonomi desa.
                         </P>
                         <div class col-lg-3>
-                            <a href="/peternakan-show" class="btn btn-dark">
-                                Data Peternakan <i class="bi bi-chevron-compact-right"></i>
-                            </a>
+                            <button class="btn btn-dark" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalPeternakan">Lihat Data
+                                Peternakan <i class="bi bi-chevron-compact-right"></i>
+                            </button>
+
+                            <div class="modal fade" id="modalPeternakan" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="max-height: 40px">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Peternakan
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                @foreach ($peternakan as $itemPeternakan)
+                                                    <div class="col-sm-6 mb-lg-3 col-lg-4 mb-sm-0">
+                                                        <div class="card h-100 shadow-sm">
+                                                            <div class="card-header bg-light border-bottom">
+                                                                <h5 class="p-0 m-0 text-dark">
+                                                                    Jenis Ternak: {{ $itemPeternakan->jenis_ternak }}
+                                                                </h5>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p class="card-text text-muted">
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <td><strong>Hewan Ternak</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPeternakan->hewan_ternak }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Pakan</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPeternakan->pakan }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Umur Ternak</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPeternakan->umur_ternak }} tahun
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Berat Ternak</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPeternakan->berat_ternak }} kg</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Jumlah Ternak</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPeternakan->jumlah_ternak }}</td>
+                                                                    </tr>
+                                                                </table>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -406,9 +591,65 @@
                             kelestarian sektor perikanan desa.
                         </P>
                         <div class col-lg-3>
-                            <a href="/perikanan-show" class="btn btn-dark">
-                                Data Perikanan <i class="bi bi-chevron-compact-right"></i>
-                            </a>
+                            <button class="btn btn-dark" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalPerikanan">Lihat Data
+                                Perikanan <i class="bi bi-chevron-compact-right"></i>
+                            </button>
+
+                            <div class="modal fade" id="modalPerikanan" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="max-height: 40px">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Perikanan
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                @foreach ($perikanan as $itemPerikanan)
+                                                    <div class="col-sm-6 mb-lg-3 col-lg-4 mb-sm-0">
+                                                        <div class="card h-100 shadow-sm">
+                                                            <div class="card-header bg-light border-bottom">
+                                                                <h5 class="p-0 m-0 text-dark">
+                                                                    Jenis Ikan: {{ $itemPerikanan->jenis_ikan }}
+                                                                </h5>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p class="card-text text-muted">
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <td><strong>Pakan</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPerikanan->pakan }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Jumlah Ikan</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPerikanan->jumlah_ikan }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Berat Ikan</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemPerikanan->berat_ikan }} kg</td>
+                                                                    </tr>
+                                                                </table>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -445,9 +686,60 @@
                             ekonomi lokal.
                         </P>
                         <div class col-lg-3>
-                            <a href="/meubel-show" class="btn btn-dark">
-                                Data Meubel <i class="bi bi-chevron-compact-right"></i>
-                            </a>
+                            <button class="btn btn-dark" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalMeubel">Lihat Data
+                                Meubel <i class="bi bi-chevron-compact-right"></i>
+                            </button>
+
+                            <div class="modal fade" id="modalMeubel" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="max-height: 40px">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Meubel
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                @foreach ($meubel as $itemMeubel)
+                                                    <div class="col-sm-6 mb-lg-3 col-lg-4 mb-sm-0">
+                                                        <div class="card h-100 shadow-sm">
+                                                            <div class="card-header bg-light border-bottom">
+                                                                <h5 class="p-0 m-0 text-dark">
+                                                                    Jenis Meubel: {{ $itemMeubel->jenis_meubel }}
+                                                                </h5>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <p class="card-text text-muted">
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <td><strong>Jenis Meubel</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemMeubel->jenis_meubel }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><strong>Jumlah Meubel</strong></td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $itemMeubel->jumlah_meubeler }}</td>
+                                                                    </tr>
+                                                                </table>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

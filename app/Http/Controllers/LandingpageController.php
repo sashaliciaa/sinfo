@@ -27,6 +27,11 @@ class LandingpageController extends Controller
         $data['perangkat'] = User::where('jabatan_id', '!=', '1')->get();
         $data['agenda'] = AgendaKegiatan::paginate(3);
         $data['galeri'] = Galeri::paginate(10);
+        $data['pertanian'] = Pertanian::all();
+        $data['perkebunan'] = Perkebunan::all();
+        $data['peternakan'] = Peternakan::all();
+        $data['perikanan'] = Perikanan::all();
+        $data['meubel'] = Meubel::all();
         $data['struktur'] = StrukturOrganisasi::where('status', '1')->get();
         if ($data['struktur']->isEmpty()) {
             $data['struktur'] = null;
@@ -94,30 +99,5 @@ class LandingpageController extends Controller
     {
         $data['agenda'] = AgendaKegiatan::all();
         return view('landingpage.agenda_show.index', $data);
-    }
-    public function pertanianShow()
-    {
-        $data['pertanian'] = Pertanian::all();
-        return view('landingpage.pertanian_show.index', $data);
-    }
-    public function perkebunanShow()
-    {
-        $data['perkebunan'] = Perkebunan::all();
-        return view('landingpage.perkebunan_show.index', $data);
-    }
-    public function peternakanShow()
-    {
-        $data['peternakan'] = Peternakan::all();
-        return view('landingpage.peternakan_show.index', $data);
-    }
-    public function perikananShow()
-    {
-        $data['perikanan'] = Perikanan::all();
-        return view('landingpage.perikanan_show.index', $data);
-    }
-    public function meubelShow()
-    {
-        $data['meubel'] = Meubel::all();
-        return view('landingpage.meubel_show.index', $data);
     }
 }
