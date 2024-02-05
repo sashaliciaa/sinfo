@@ -67,6 +67,11 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-images fa-fw"></i></div>
                 Galeri
             </a>
+            <a class="nav-link {{ request()->routeIs('struktur') ? 'active' : '' }}"
+                href="{{ route('struktur.index') }}">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns fa-fw"></i></div>
+                Struktur Organisasi
+            </a>
         </div>
     </div>
     <div class="sb-sidenav-footer">

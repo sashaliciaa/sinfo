@@ -147,7 +147,16 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12" data-aos="fade-right" data-aos-delay="100" style="text-align: center;">
-                        <img src="{{ asset('assets2/img/strukturorganisasi.png') }}" class="img-fluid" alt="">
+                        @if ($struktur == null)
+                            <h3 class="p-5 border border-3 border-dark"><i class="bi bi-emoji-frown-fill"></i><br>Belum
+                                ada
+                                Struktur
+                                Organisasi
+                            </h3>
+                        @else
+                            <img src="{{ asset('../Struktur_Organisasi/' . $struktur) }}" class="img-fluid"
+                                alt="">
+                        @endif
                     </div>
                 </div>
 

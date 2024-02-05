@@ -13,6 +13,7 @@ use App\Models\Landingpage;
 use Illuminate\Http\Request;
 use App\Models\PerangkatDesa;
 use App\Models\AgendaKegiatan;
+use App\Models\StrukturOrganisasi;
 use App\Http\Controllers\Controller;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 
@@ -26,6 +27,13 @@ class LandingpageController extends Controller
         $data['perangkat'] = User::where('jabatan_id', '!=', '1')->get();
         $data['agenda'] = AgendaKegiatan::paginate(3);
         $data['galeri'] = Galeri::paginate(10);
+        $data['struktur'] = StrukturOrganisasi::where('status', '1')->get();
+        if ($data['struktur']->isEmpty()) {
+            $data['struktur'] = null;
+        } else {
+            $data['struktur'] = $data['struktur']->first()->struktur;
+        }
+
         return view('landingpage.index', $data);
     }
 

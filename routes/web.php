@@ -13,6 +13,7 @@ use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\PerangkatDesaController;
 use App\Http\Controllers\AgendaKegiatanController;
 use App\Http\Controllers\MeubelController;
+use App\Http\Controllers\StrukturOrganisasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::resource('/potensi_desa/peternakan', PeternakanController::class);
 Route::resource('/potensi_desa/perikanan', PerikananController::class);
 Route::resource('/potensi_desa/meubel', MeubelController::class);
 Route::resource('/galeri', GaleriController::class);
+Route::resource('/struktur', StrukturOrganisasiController::class);
 
 Route::get('/peternakan/print-report', [PeternakanController::class, 'printReport'])->name('peternakan.printReport');
 Route::get('/pertanian/print-report', [PertanianController::class, 'printReport'])->name('pertanian.printReport');
@@ -53,3 +55,4 @@ Route::get('/perkebunan-show', [LandingpageController::class, 'perkebunanShow'])
 Route::get('/peternakan-show', [LandingpageController::class, 'peternakanShow'])->name('peternakan.show');
 Route::get('/perikanan-show', [LandingpageController::class, 'perikananShow'])->name('perikanan.show');
 Route::get('/meubel-show', [LandingpageController::class, 'meubelShow'])->name('meubel.show');
+Route::get('/struktur-status/{id}', [StrukturOrganisasiController::class, 'strukturStatus'])->name('struktur.status');
