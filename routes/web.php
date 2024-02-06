@@ -48,6 +48,8 @@ Route::get('/perkebunan/print-report', [PerkebunanController::class, 'printRepor
 Route::get('/perikanan/print-report', [PerikananController::class, 'printReport'])->name('perikanan.printReport');
 Route::get('/meubel/print-report', [MeubelController::class, 'printReport'])->name('meubel.printReport');
 
+Route::get('/cari-perangkat', [PerangkatDesaController::class, 'cari'])->name('perangkat.cari');
+
 Route::get('/galeri-show', [LandingpageController::class, 'galeriShow'])->name('galeri.show');
 Route::get('/agenda-show', [LandingpageController::class, 'agendaShow'])->name('agenda.show');
 Route::get('/struktur-status/{id}', [StrukturOrganisasiController::class, 'strukturStatus'])->name('struktur.status');

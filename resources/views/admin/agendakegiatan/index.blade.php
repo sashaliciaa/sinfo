@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group">
                             <label for="_mulai" class="form-label">Tanggal Kegiatan selesai</label>
-                            <input type="date" class="form-control" id="_mulai_selesai" name="tgl_kegiatan_selesai"
+                            <input type="date" class="form-control" id="tgl_kegiatan_selesai" name="tgl_kegiatan_selesai"
                                 placeholder="Masukkan Tanggal Kegiatan Mulai" autofocus required autocomplete="">
                         </div>
                         <div class="form-group">

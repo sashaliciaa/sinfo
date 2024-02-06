@@ -25,7 +25,7 @@ class GaleriController extends Controller
         try {
             $this->validate($request, [
                 'nama_foto' => 'required',
-                'foto_galeri' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'foto_galeri' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
             ]);
 
             $file = $request->file('foto_galeri');

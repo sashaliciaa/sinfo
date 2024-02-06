@@ -92,8 +92,7 @@
                         <div class="form-group">
                             <label for="pakan" class="form-label">Struktur Organisasi</label>
                             <input type="file" class="form-control" name="struktur" required>
-                            <small class="text-danger">*Format
-                                PDF</small>
+                            <small class="text-danger">*Format JPG/PNG</small>
                         </div>
                     </div>
                     <div class="modal-footer">

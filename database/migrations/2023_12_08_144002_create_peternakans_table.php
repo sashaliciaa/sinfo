@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('peternakans', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_ternak');
-            $table->string('hewan_ternak');
-            $table->string('pakan');
-            $table->integer('umur_ternak');
-            $table->float('berat_ternak');
-            $table->integer('jumlah_ternak');
+            $table->string('jenis_ternak')->nullable();
+            $table->string('hewan_ternak')->nullable();
+            $table->string('pakan')->nullable();
+            $table->integer('umur_ternak')->nullable();
+            $table->float('berat_ternak')->nullable();
+            $table->integer('jumlah_ternak')->nullable();
             $table->timestamps();
         });
     }

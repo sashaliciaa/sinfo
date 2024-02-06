@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('perkebunans', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_tanaman');
-            $table->date('waktu_tanam');
-            $table->date('waktu_panen');
-            $table->string('luas_wilayah_tanam');
+            $table->string('jenis_tanaman')->nullable();
+            $table->date('waktu_tanam')->nullable();
+            $table->date('waktu_panen')->nullable();
+            $table->string('luas_wilayah_tanam')->nullable();
             $table->timestamps();
         });
     }

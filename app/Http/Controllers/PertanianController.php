@@ -75,9 +75,14 @@ class PertanianController extends Controller
         }
     }
 
-    public function destroy(Pertanian $pertanian, $id)
+    public function destroy($id)
     {
-        $pertanian = Pertanian::where("id", $id)->first();
+        $pertanian = Pertanian::find($id);
+
+        if (!$pertanian) {
+            return redirect()->route('pertanian.index')->with('fail', 'Data Pertanian Tidak Ditemukan');
+        }
+
         $pertanian->delete();
 
         return redirect()->route('pertanian.index')->with('success', 'Data berhasil dihapus.');
@@ -89,10 +94,11 @@ class PertanianController extends Controller
 
         // select jenis tanaman yang tidak double
         $jenis_tanaman = Pertanian::select('jenis_tanaman')->distinct()->get();
-        $luas_tanam = Pertanian::select('luas_wilayah_tanam')->get();
+
+        // Hitung total luas wilayah tanam
+        $luas_tanam_count = $pertanians->sum('luas_wilayah_tanam');
 
         $jenis_tanaman_count = $jenis_tanaman->count();
-        $luas_tanam_count = $luas_tanam->count();
 
         $pdf = app('dompdf.wrapper')->loadView('admin.pertanian.report', compact('pertanians', 'jenis_tanaman_count', 'luas_tanam_count'));
 

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <h3 class="mt-4 text-center">Perangkat Desa Sindangmekar</h3>
+    <h3 class="mt-4 text-center">
+        Perangkat Desa Sindangmekar</h3>
     <ol class="breadcrumb mb-4">
     </ol>
     @if ($message = Session::get('success'))
@@ -12,6 +13,28 @@
             <p>{{ $message }}</p>
         </div>
     @endif
+
+    <div class="mb-3">
+        <form action="{{ url('/cari-perangkat') }}" method="GET" class="row g-3 align-items-center">
+            @csrf
+            <div class="col-4">
+                <label for="tgl_mulai_jabat1" class="form-label">Tanggal Mulai Jabatan Awal :</label>
+                <input type="date" name="tgl_mulai_jabat1" class="form-control">
+            </div>
+            <div class="col-4">
+                <label for="tgl_mulai_jabat2" class="form-label">Tanggal Mulai Jabatan Akhir :</label>
+                <input type="date" name="tgl_mulai_jabat2" class="form-control">
+            </div>
+            <div class="col">
+                <label>&nbsp</label><br>
+                <input type="submit" class="btn btn-primary" value="Cari Data">
+            </div>
+        </form>
+    </div>
+
+
+
+
     <div class="card mb-4">
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
@@ -371,7 +394,7 @@
                             <tr>
                                 <th>Alamat</th>
                                 <td>:</td>
-                                <td>{{ $item->username }}</td>
+                                <td>{{ $item->alamat }}</td>
                             </tr>
                             <tr>
                                 <th>Jabatan</th>
@@ -386,7 +409,13 @@
                             <tr>
                                 <th>Status</th>
                                 <td>:</td>
-                                <td>{{ $item->status }}</td>
+                                <td>
+                                    @if ($item->status == 1)
+                                        <span class="badge bg-success">Aktif</span>
+                                    @else
+                                        <span class="badge bg-danger">Nonaktif</span>
+                                    @endif
+                                </td>
                             </tr>
                         </table>
                     </div>

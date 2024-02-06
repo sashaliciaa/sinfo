@@ -1,6 +1,6 @@
 <div>
     <footer id="footer">
-        <div class="footer-top">
+        <div class="footer-top bg-dark text-white">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 footer-links">
@@ -17,7 +17,8 @@
                                 <h3><span>Profile Desa</span></h3>
                                 <ul>
                                     <li><i class="bx bx-chevron-right"></i> <a href="#tentangkami">Tentang Kami</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#visimisi">Visi & Misi</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="#visimisi">Visi
+                                            & Misi</a></li>
                                 </ul>
                             </div>
 

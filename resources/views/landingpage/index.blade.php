@@ -764,7 +764,7 @@
                     @foreach ($agenda as $itemAgenda)
                         <div class="col-sm-6 mb-lg-3 col-lg-4 mb-sm-0">
                             <div class="card d-flex flex-column h-100 shadow-sm">
-                                <div class="card-header d-flex flex-column h-100 bg-secondary text-white">
+                                <div class="card-header d-flex bg-secondary text-white">
                                     <b>
                                         <h5 class="p-0 m-0">
                                             {{ $itemAgenda->nama_agenda }}

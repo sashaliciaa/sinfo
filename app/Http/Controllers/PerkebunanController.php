@@ -75,9 +75,14 @@ class PerkebunanController extends Controller
         }
     }
 
-    public function destroy(Perkebunan $perkebunan, $id)
+    public function destroy($id)
     {
-        $perkebunan = Perkebunan::where("id", $id)->first();
+        $perkebunan = Perkebunan::find($id);
+
+        if (!$perkebunan) {
+            return redirect()->route('perkebunan.index')->with('fail', 'Data Perkebunan Tidak Ditemukan');
+        }
+
         $perkebunan->delete();
 
         return redirect()->route('perkebunan.index')->with('success', 'Data berhasil dihapus.');
@@ -89,10 +94,11 @@ class PerkebunanController extends Controller
 
         // select jenis tanaman yang tidak double
         $jenis_tanaman = Perkebunan::select('jenis_tanaman')->distinct()->get();
-        $luas_tanam = Perkebunan::select('luas_wilayah_tanam')->get();
+
+        // Hitung total luas wilayah tanam
+        $luas_tanam_count = $perkebunans->sum('luas_wilayah_tanam');
 
         $jenis_tanaman_count = $jenis_tanaman->count();
-        $luas_tanam_count = $luas_tanam->count();
 
         $pdf = app('dompdf.wrapper')->loadView('admin.perkebunan.report', compact('perkebunans', 'jenis_tanaman_count', 'luas_tanam_count'));
 

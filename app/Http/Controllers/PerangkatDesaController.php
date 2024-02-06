@@ -162,4 +162,24 @@ class PerangkatDesaController extends Controller
 
         return redirect()->route('perangkatdesa.index')->with('success', 'Data berhasil dihapus.');
     }
+
+    public function cari(Request $request)
+    {
+        $tglMulaiJabat1 = $request->input('tgl_mulai_jabat1');
+        $tglMulaiJabat2 = $request->input('tgl_mulai_jabat2');
+
+        $users = User::latest()
+            ->where('jabatan_id', '!=', '1')
+            ->whereBetween('tgl_mulai_jabat', [$tglMulaiJabat1, $tglMulaiJabat2])
+            ->get();
+
+        $jabatanIds = $users->pluck('jabatan_id')->toArray();
+
+        $dataJabatan = Jabatan::where('id', '!=', '1')->get();
+        $selectJabatan = Jabatan::where('id', '!=', '1')
+            ->whereNotIn('id', $jabatanIds)
+            ->get();
+
+        return view('admin.perangkatdesa.index', compact('users', 'dataJabatan', 'selectJabatan'));
+    }
 }

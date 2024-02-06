@@ -75,7 +75,7 @@
             </tr>
             <tr>
                 <td>Total Data : {{ $perkebunans->count() }}</td>
-                <td class="right">Luas Tanam : {{ $luas_tanam_count }}</td>
+                <td class="right">Luas Tanam : {{ $luas_tanam_count }}m<sup>2</sup></td>
             </tr>
         </tbody>
     </table>
